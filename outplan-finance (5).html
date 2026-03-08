@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Outplan Finance — Chartered Financial Planning for Business Owners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#27312E;
+  --near-black:#1e2825;
+  --white:#FFFFFF;
+  --off-white:#EEEEEC;
+  --grey-100:#E8E8E6;
+  --grey-200:#D4D4D2;
+  --grey-400:#C0C0C0;
+  --grey-600:#7A8A86;
+  --grey-800:#3D4A47;
+  --green:#10BB82;
+  --green-lt:#13d494;
+  --green-dim:rgba(16,187,130,0.1);
+  --green-line:rgba(16,187,130,0.3);
+  --green-dark:#007D6F;
+  --r-sm:12px;
+  --r-md:20px;
+  --r-lg:28px;
+  --r-xl:40px;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Poppins",sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:300;letter-spacing:.01em}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--grey-200);transition:all .3s}
+nav.scrolled{padding:.85rem 4rem;box-shadow:0 1px 20px rgba(0,0,0,.04)}
+.logo-img{height:28px;width:auto;display:block;filter:brightness(0)}
+.logo-img-footer{filter:brightness(0) invert(1);opacity:.7}
+.hero-brand-logo{margin-bottom:2rem;animation:fadeUp .7s ease both}
+.hero-logo-img{height:44px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin:0 auto}
+.logo{font-size:1.15rem;font-weight:300;color:var(--black);text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--green)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:.78rem;font-weight:300;color:var(--grey-600);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{background:#27312E!important;color:var(--white)!important;padding:.55rem 1.4rem;border-radius:50px;font-weight:500!important;font-size:.78rem!important;transition:background .2s!important}
+.nav-cta:hover{background:#007D6F!important;color:var(--white)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 4rem 5rem;background:#27312E;position:relative;overflow:hidden}
+.hero-orb1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(16,187,130,.15) 0%,transparent 65%);top:-200px;left:-200px;pointer-events:none}
+.hero-orb2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(16,187,130,.1) 0%,transparent 65%);bottom:-150px;right:-100px;pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.hero-chip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.38rem 1rem;margin-bottom:2.2rem;animation:fadeUp .7s ease both}
+.hero-chip span{font-size:.68rem;font-weight:300;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase}
+.hero-chip-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0}
+.hero h1{font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:1.12;letter-spacing:-.02em;color:var(--white);margin-bottom:1.6rem;animation:fadeUp .8s .1s ease both}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--green)}
+.hero-sub{font-size:1.05rem;font-weight:200;line-height:1.8;color:rgba(255,255,255,.55);max-width:560px;margin:0 auto 2.8rem;animation:fadeUp .8s .2s ease both}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:3rem;animation:fadeUp .8s .3s ease both}
+.hero-tag{padding:.35rem 1rem;background:rgba(16,187,130,.15);border:1px solid rgba(16,187,130,.4);border-radius:50px;font-size:.7rem;color:rgba(255,255,255,.9);font-weight:300;letter-spacing:.02em}
+.hero-ctas{display:flex;gap:.9rem;justify-content:center;align-items:center;flex-wrap:wrap;animation:fadeUp .8s .4s ease both}
+.btn-primary{background:var(--green);color:var(--white);padding:.85rem 2rem;border-radius:50px;font-size:.85rem;font-weight:400;text-decoration:none;display:inline-block;transition:all .2s;box-shadow:0 4px 24px rgba(16,187,130,.3)}
+.btn-primary:hover{background:#007D6F;transform:translateY(-2px);box-shadow:0 8px 32px rgba(16,187,130,.35)}
+.btn-secondary{padding:.85rem 2rem;border-radius:50px;border:1px solid rgba(255,255,255,.18);font-size:.85rem;font-weight:400;color:rgba(255,255,255,.7);text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,.4);color:var(--white)}
+.btn-secondary svg{width:14px;height:14px;transition:transform .2s}
+.btn-secondary:hover svg{transform:translateX(3px)}
+
+/* STRIP */
+.strip{background:#EEEEEC;border-bottom:1px solid var(--grey-200);padding:1.2rem 4rem;display:flex;align-items:center;justify-content:center;gap:2.8rem;flex-wrap:wrap}
+.si{display:flex;align-items:center;gap:.5rem;font-size:.73rem;color:var(--grey-600);font-weight:400}
+.si-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+.sep{width:1px;height:14px;background:var(--grey-200)}
+
+/* SECTION SHARED */
+section{position:relative}
+.eyebrow{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.eyebrow-bar{width:20px;height:2px;background:linear-gradient(90deg,var(--green),#007D6F);border-radius:2px}
+.eyebrow span{font-size:.65rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+
+/* VIDEO INTRO */
+.video-intro{background:var(--white);padding:7rem 4rem}
+.video-intro-inner{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:3.5rem}
+.video-intro-hdr{text-align:center}
+.video-intro-hdr .eyebrow{justify-content:center}
+.video-intro-hdr h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;letter-spacing:-.02em;color:var(--black);line-height:1.2;margin-bottom:.8rem}
+.video-intro-hdr p{font-size:.9rem;color:var(--grey-600);font-weight:300}
+.video-device{position:relative;width:100%;max-width:720px}
+.video-device-frame{background:#1a1a1a;border-radius:20px;padding:12px;box-shadow:0 30px 80px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,.3);position:relative}
+.video-device-frame::before{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);width:60px;height:4px;background:#2a2a2a;border-radius:2px}
+.video-device-camera{position:absolute;top:9px;left:50%;transform:translateX(-50%) translateX(36px);width:6px;height:6px;background:#2a2a2a;border-radius:50%}
+.video-device-screen{background:#27312E;border-radius:12px;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.video-device-btn{width:36px;height:4px;background:#2a2a2a;border-radius:2px;margin:10px auto 0}
+.video-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:3rem;text-align:center}
+.video-placeholder-icon{width:72px;height:72px;border-radius:50%;background:rgba(16,187,130,.12);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;color:var(--green);transition:all .3s;cursor:pointer}
+.video-placeholder-icon:hover{background:rgba(16,187,130,.2);transform:scale(1.05)}
+.video-placeholder-icon svg{width:32px;height:32px}
+.video-placeholder p{font-size:.95rem;font-weight:300;color:rgba(255,255,255,.6);margin:0}
+.video-placeholder span{font-size:.72rem;font-weight:300;color:rgba(255,255,255,.25);border:1px dashed rgba(255,255,255,.15);border-radius:var(--r-sm);padding:.4rem .9rem}
+@media(max-width:768px){.video-intro{padding:5rem 1.5rem}}
+/* PRICING */
+.pricing{background:var(--white);padding:8rem 4rem}
+.pricing-hdr{text-align:center;max-width:600px;margin:0 auto 4rem}
+.pricing-hdr .eyebrow{justify-content:center}
+.pricing-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:1rem}
+.pricing-hdr p{font-size:.95rem;color:var(--grey-600);line-height:1.75;font-weight:300}
+.single-plan{background:#27312E;border-radius:var(--r-xl);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;max-width:960px;margin:0 auto;box-shadow:0 30px 80px rgba(0,0,0,.18)}
+.plan-left{padding:3.5rem;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.1)}
+.plan-right{padding:3.5rem}
+.plan-eyebrow{font-size:.62rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.4rem}
+.plan-price{display:flex;align-items:baseline;gap:.3rem;margin-bottom:1.2rem}
+.plan-price .sym{font-size:1.4rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1}
+.plan-price .num{font-size:4rem;font-weight:300;color:var(--white);line-height:1;letter-spacing:-.04em}
+.plan-price .per{font-size:.85rem;color:rgba(255,255,255,.4);font-weight:300;align-self:flex-end;padding-bottom:.4rem}
+.plan-desc{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.7;font-weight:300;flex:1;margin-bottom:2.2rem}
+.plan-cta{display:block;text-align:center;background:var(--green);color:var(--white);padding:.9rem 1.8rem;border-radius:50px;font-size:.82rem;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(16,187,130,.25)}
+.plan-cta:hover{background:#007D6F;transform:translateY(-1px)}
+.plan-ftitle{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.4rem}
+.plan-flist{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.plan-flist li{display:flex;align-items:flex-start;gap:.8rem;font-size:.83rem;color:rgba(255,255,255,.6);line-height:1.5;font-weight:300}
+.plan-flist li .check{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.plan-flist li .check svg{width:8px;height:8px;color:var(--green)}
+.no-fees{display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;margin-top:2.5rem}
+.nf{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:var(--grey-600);font-weight:300}
+.nf-dot{width:4px;height:4px;border-radius:50%;background:var(--green)}
+.disclaimer{max-width:960px;margin:1.8rem auto 0;padding:1.3rem 1.8rem;background:rgba(16,187,130,.06);border:1px solid rgba(16,187,130,.2);border-radius:var(--r-md);display:flex;align-items:flex-start;gap:.9rem}
+.disclaimer svg{flex-shrink:0;width:16px;height:16px;color:var(--green);margin-top:.15rem}
+.disclaimer p{font-size:.76rem;color:var(--grey-800);line-height:1.7;font-weight:300}
+
+/* ABOUT */
+.about{background:#EEEEEC;padding:8rem 4rem}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-l h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.12;margin-bottom:1.4rem}
+.about-l h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.about-l p{font-size:.92rem;line-height:1.82;color:var(--grey-600);margin-bottom:.9rem;font-weight:200}
+.about-r{display:flex;flex-direction:column;gap:1rem}
+.pillar{background:var(--white);border-radius:var(--r-md);padding:1.6rem 1.8rem;border:1px solid var(--grey-200);transition:all .25s}
+.pillar:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.07);border-color:var(--green-line)}
+.pillar-ic{width:32px;height:32px;margin-bottom:.8rem;color:var(--green);display:flex;align-items:center;justify-content:center;background:var(--green-dim);border-radius:8px;padding:6px;flex-shrink:0}
+.pillar h3{font-size:.9rem;font-weight:400;color:var(--black);margin-bottom:.3rem}
+.pillar p{font-size:.81rem;line-height:1.65;color:var(--grey-600);font-weight:300}
+
+/* BOOK SMART STREET SMART */
+.bsss{background:#EEEEEC;padding:8rem 4rem}
+.bsss-inner{max-width:1100px;margin:0 auto}
+.bsss-hdr{margin-bottom:3.5rem}
+.bsss-hdr h2{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:.6rem}
+.bsss-hdr h2 em{font-style:italic;color:var(--green)}
+.bsss-sub{font-size:.95rem;color:var(--grey-600);font-weight:300}
+.bsss-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.bsss-l p{font-size:.88rem;color:var(--grey-800);line-height:1.85;font-weight:300;margin-bottom:1rem}
+.bsss-l p:last-child{margin-bottom:0;font-weight:400;color:var(--black)}
+.bsss-r{display:flex;flex-direction:column;gap:1.2rem}
+.bsss-card{background:var(--white);border:1px solid var(--grey-200);border-radius:var(--r-lg);padding:2rem;transition:all .25s}
+.bsss-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.bsss-card--street{border-left:3px solid var(--green)}
+.bsss-card--book{border-left:3px solid var(--black)}
+.bsss-card-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.bsss-card--book .bsss-card-ic{background:rgba(39,49,46,.08);color:var(--black)}
+.bsss-card--street .bsss-card-ic{background:var(--green-dim);border:1px solid var(--green-line);color:var(--green)}
+.bsss-card-ic svg{width:17px;height:17px}
+.bsss-card-label{font-size:.6rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.4rem}
+.bsss-card--book .bsss-card-label{color:var(--grey-600)}
+.bsss-card--street .bsss-card-label{color:var(--green)}
+.bsss-card h3{font-size:.95rem;font-weight:400;color:var(--black);margin-bottom:.7rem;line-height:1.4}
+.bsss-card p{font-size:.8rem;color:var(--grey-600);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.bsss-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.bsss-tags span{font-size:.62rem;font-weight:300;color:var(--grey-800);background:var(--grey-100);border-radius:50px;padding:.2rem .65rem}
+@media(max-width:900px){.bsss{padding:6rem 2rem}.bsss-body{grid-template-columns:1fr;gap:2.5rem}}
+@media(max-width:640px){.bsss{padding:5rem 1.5rem}}
+/* ADVICE */
+.advice{background:#2D3B37;padding:8rem 4rem;overflow:hidden}
+.advice-hdr{text-align:center;max-width:740px;margin:0 auto 4.5rem}
+.advice-hdr .eyebrow{justify-content:center}
+.advice-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--white);line-height:1.1;margin-bottom:1.1rem}
+.advice-hdr h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.advice-hdr p{font-size:.93rem;color:rgba(255,255,255,.45);line-height:1.8;font-weight:300}
+.advice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1100px;margin:0 auto}
+.acard{background:#2E3C38;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:2rem 1.9rem;transition:all .25s}
+.acard:hover{border-color:var(--green-line);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.acard-ic{width:36px;height:36px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;background:rgba(16,187,130,.12);border-radius:10px;padding:7px;color:var(--green);flex-shrink:0}
+.acard h3{font-size:.95rem;font-weight:600;color:var(--white);margin-bottom:.9rem}
+.acard ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.acard ul li{display:flex;align-items:flex-start;gap:.5rem;font-size:.79rem;color:rgba(255,255,255,.42);line-height:1.45;font-weight:300}
+.acard ul li::before{content:"";flex-shrink:0;margin-top:7px;width:4px;height:4px;border-radius:50%;background:var(--green);opacity:.7}
+.acard.hl{background:rgba(16,187,130,.06);border-color:var(--green-line)}
+.acard.hl h3{color:var(--green-lt)}
+.acard-cta-p{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;margin-bottom:1.6rem}
+
+/* TIMELINE */
+.timeline{background:var(--white);padding:8rem 4rem}
+.timeline-hdr{text-align:center;max-width:640px;margin:0 auto 4.5rem}
+.timeline-hdr .eyebrow{justify-content:center}
+.timeline-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:1rem}
+.timeline-hdr p{font-size:.93rem;color:var(--grey-600);line-height:1.75;font-weight:300}
+.tl{display:flex;flex-direction:column;max-width:780px;margin:0 auto;position:relative}
+.tl::before{content:"";position:absolute;left:27px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--grey-200) 4%,var(--grey-200) 96%,transparent);border-radius:2px}
+.tl-item{display:flex;gap:2rem;align-items:flex-start;padding-bottom:2.8rem;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-num{flex-shrink:0;width:56px;height:56px;border-radius:50%;background:var(--white);border:2px solid var(--grey-200);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:var(--black);position:relative;z-index:2;transition:all .3s}
+.tl-item:hover .tl-num{border-color:var(--green);color:var(--green);box-shadow:0 0 0 6px var(--green-dim)}
+.tl-item.special .tl-num{border-color:var(--green);color:var(--green);background:var(--white);z-index:3}
+.tl-item.special::before{content:"";position:absolute;left:0;top:0;width:56px;bottom:0;background:var(--white);z-index:2}
+.tl-content{padding:.8rem 0 0;flex:1}
+.tl-step{font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
+.tl-content h3{font-size:1.05rem;font-weight:400;color:var(--black);margin-bottom:.5rem}
+.tl-content p{font-size:.83rem;color:var(--grey-600);line-height:1.75;font-weight:300;max-width:540px}
+.tl-content ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-top:.6rem}
+.tl-content ul li{display:flex;align-items:flex-start;gap:.5rem;font-size:.79rem;color:var(--grey-600);line-height:1.45;font-weight:300}
+.tl-content ul li::before{content:"";flex-shrink:0;margin-top:7px;width:4px;height:4px;border-radius:50%;background:var(--green)}
+.tl-item.special .tl-content h3{color:var(--green)}
+.tl-repeat{display:inline-flex;align-items:center;gap:.5rem;margin-top:.8rem;padding:.4rem 1rem;border:1px solid var(--green-line);border-radius:50px;background:var(--green-dim);font-size:.72rem;color:var(--green);font-weight:500}
+.tl-repeat svg{width:13px;height:13px}
+
+/* CHARGING */
+.charging{background:#EEEEEC;padding:8rem 4rem}
+.charging-hdr{text-align:center;max-width:720px;margin:0 auto 4.5rem}
+.charging-hdr .eyebrow{justify-content:center}
+.charging-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:1rem}
+.charging-hdr h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.charging-hdr p{font-size:.93rem;color:var(--grey-600);line-height:1.78;font-weight:300;max-width:640px;margin:0 auto}
+.charge-vs{display:grid;grid-template-columns:1fr auto 1fr;max-width:1060px;margin:0 auto 3rem}
+.charge-side{border-radius:var(--r-xl);overflow:hidden;display:flex;flex-direction:column}
+.charge-side.old{background:var(--white);border:1px solid var(--grey-200)}
+.charge-side.new{background:#27312E;border:1px solid rgba(16,187,130,.2)}
+.charge-head{padding:2rem 2.2rem 1.6rem}
+.charge-side.old .charge-head{border-bottom:1px solid var(--grey-100)}
+.charge-side.new .charge-head{border-bottom:1px solid rgba(255,255,255,.07)}
+.charge-lbl{font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.6rem}
+.charge-side.old .charge-lbl{color:var(--grey-400)}
+.charge-side.new .charge-lbl{color:var(--green)}
+.charge-head h3{font-size:1.05rem;font-weight:400;line-height:1.3;margin-bottom:.35rem}
+.charge-side.old .charge-head h3{color:var(--black)}
+.charge-side.new .charge-head h3{color:var(--white)}
+.charge-head p{font-size:.78rem;font-weight:300;line-height:1.6}
+.charge-side.old .charge-head p{color:var(--grey-400)}
+.charge-side.new .charge-head p{color:rgba(255,255,255,.38)}
+.charge-items{padding:1.5rem 2.2rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+.charge-item{display:flex;gap:.8rem;padding:.9rem 1rem;border-radius:var(--r-md)}
+.charge-side.old .charge-item{background:var(--grey-100);border:1px solid var(--grey-200)}
+.charge-side.new .charge-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.ci-ic{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.charge-side.old .ci-ic{background:#FEE2E2;color:#DC2626}
+.charge-side.new .ci-ic{background:rgba(16,187,130,.1);color:var(--green)}
+.ci-txt strong{display:block;font-size:.8rem;font-weight:400;margin-bottom:.15rem}
+.charge-side.old .ci-txt strong{color:var(--black)}
+.charge-side.new .ci-txt strong{color:var(--white)}
+.ci-txt span{font-size:.76rem;font-weight:300;line-height:1.5}
+.charge-side.old .ci-txt span{color:var(--grey-400)}
+.charge-side.new .ci-txt span{color:rgba(255,255,255,.38)}
+.charge-foot{padding:1.4rem 2.2rem 2rem}
+.charge-side.old .charge-foot{border-top:1px solid var(--grey-100)}
+.charge-side.new .charge-foot{border-top:1px solid rgba(255,255,255,.07)}
+.charge-total{font-size:.76rem;font-weight:300}
+.charge-side.old .charge-total{color:var(--grey-400)}
+.charge-side.new .charge-total{color:rgba(255,255,255,.38)}
+.charge-total strong{display:block;font-size:1.3rem;font-weight:700;margin-top:.2rem;letter-spacing:-.02em}
+.charge-side.old .charge-total strong{color:#DC2626}
+.charge-side.new .charge-total strong{color:var(--green);font-weight:400}
+.vs-div{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 1.4rem;gap:.5rem}
+.vs-circle{width:42px;height:42px;border-radius:50%;background:#EEEEEC;border:2px solid var(--grey-200);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:var(--grey-800);flex-shrink:0}
+.vs-ln{flex:1;width:1px;background:var(--grey-200)}
+.charge-insight{max-width:1060px;margin:0 auto;padding:2rem 2.4rem;background:#27312E;border-radius:var(--r-xl);display:flex;align-items:flex-start;gap:1.2rem}
+.ci-insight-ic{flex-shrink:0;margin-top:.05rem;width:36px;height:36px;background:rgba(255,255,255,.08);border-radius:10px;padding:7px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6)}
+.ci-insight-txt h4{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:.45rem}
+.ci-insight-txt p{font-size:.82rem;color:rgba(255,255,255,.42);line-height:1.75;font-weight:300}
+.ci-insight-txt p strong{color:var(--green);font-weight:500}
+
+/* COST REALITY */
+.cost-reality{background:var(--grey-100);border-radius:var(--r-xl);max-width:1060px;margin:0 auto 1rem;overflow:hidden}
+.cost-reality-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cr-left{padding:3rem 3rem 3rem;border-right:1px solid var(--grey-200)}
+.cr-right{padding:3rem 3rem 3rem;display:flex;flex-direction:column;gap:1.2rem;background:var(--white)}
+.cr-left h3{font-size:1.15rem;font-weight:700;letter-spacing:-.02em;color:var(--black);margin-bottom:.6rem;line-height:1.3}
+.cr-left p{font-size:.82rem;color:var(--grey-600);line-height:1.7;font-weight:300;margin-bottom:1.4rem}
+.cr-fees{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.6rem}
+.cr-fee{background:var(--white);border:1px solid var(--grey-200);border-radius:var(--r-md);padding:1rem 1.2rem}
+.cr-fee-label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--grey-400);margin-bottom:.5rem}
+.cr-fee-typical{font-size:.81rem;color:var(--grey-600);font-weight:300;margin-bottom:.25rem}
+.cr-fee-typical strong{color:#DC2626;font-weight:600}
+.cr-fee-us{font-size:.81rem;color:var(--grey-600);font-weight:300}
+.cr-fee-us strong{font-weight:600;color:var(--grey-800)}
+.cr-fee-us strong.green{color:var(--green)}
+.cr-total{background:#27312E;border-radius:var(--r-md);padding:1.3rem 1.5rem}
+.cr-total-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.4rem}
+.cr-total-num{font-size:2rem;font-weight:300;color:#F87171;letter-spacing:-.04em;line-height:1;margin-bottom:.3rem}
+.cr-total-sub{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:300}
+.cr-callout{background:var(--grey-100);border:1px solid var(--grey-200);border-radius:var(--r-md);padding:1.4rem 1.5rem}
+.cr-callout.green-callout{background:var(--green-dim);border-color:var(--green-line)}.cr-callout.green-callout .cr-callout-ic{background:rgba(16,187,130,.15);color:var(--green)}
+.cr-callout-ic{width:32px;height:32px;margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;background:var(--grey-200);border-radius:8px;padding:6px;color:var(--grey-800)}
+.cr-callout h4{font-size:.88rem;font-weight:600;color:var(--black);margin-bottom:.5rem}
+.cr-callout p{font-size:.79rem;color:var(--grey-600);line-height:1.7;font-weight:300;margin-bottom:.5rem}
+.cr-callout p:last-child{margin-bottom:0}
+.cr-callout p strong{color:var(--black);font-weight:600}
+.cr-callout.green-callout p strong{color:var(--green)}
+@media(max-width:768px){.cost-reality-inner{grid-template-columns:1fr}.cr-left{border-right:none;border-bottom:1px solid var(--grey-200)}.cr-left,.cr-right{padding:2rem 1.8rem}}
+/* HUMAN TOUCH */
+.human{background:var(--white);padding:8rem 4rem;position:relative;overflow:hidden}
+.human-inner{max-width:1060px;margin:0 auto}
+.human-split{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.human-l h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1;margin-bottom:1.4rem}
+.human-l h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.human-l p{font-size:.92rem;line-height:1.82;color:var(--grey-600);font-weight:300;margin-bottom:.9rem}
+.human-r{display:flex;flex-direction:column;gap:1rem}
+.human-card{background:#EEEEEC;border:1px solid var(--grey-200);border-radius:var(--r-lg);padding:1.5rem 1.7rem;display:flex;align-items:flex-start;gap:1rem;transition:all .25s}
+.human-card:hover{border-color:var(--green-line);background:var(--white);box-shadow:0 8px 30px rgba(0,0,0,.06);transform:translateY(-2px)}
+.human-card-ic{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;color:var(--green)}
+.human-card-ic svg{width:16px;height:16px}
+.human-card strong{display:block;font-size:.87rem;font-weight:400;color:var(--black);margin-bottom:.25rem}
+.human-card span{font-size:.79rem;color:var(--grey-600);font-weight:300;line-height:1.6}
+.human-banner{margin-top:4rem;background:#27312E;border-radius:var(--r-xl);padding:3rem 3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.human-banner-l h3{font-size:1.3rem;font-weight:400;color:var(--white);letter-spacing:-.02em;line-height:1.3;margin-bottom:.7rem}
+.human-banner-l h3 em{font-style:italic;font-weight:300;color:var(--green)}
+.human-banner-l p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300;max-width:560px}
+.human-banner-r{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex-shrink:0}
+.human-banner-stat{font-size:3rem;font-weight:300;color:var(--green);letter-spacing:-.05em;line-height:1}
+.human-banner-stat-label{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.04em;max-width:140px;line-height:1.4}
+@media(max-width:1024px){
+  .human{padding:6rem 2rem}
+  .human-split{grid-template-columns:1fr;gap:3rem}
+  .human-banner{grid-template-columns:1fr;gap:1.5rem;padding:2.2rem 2rem}
+  .human-banner-r{flex-direction:row;align-items:baseline;gap:.5rem}
+  .human-banner-stat{font-size:2.2rem}
+}
+@media(max-width:640px){.human{padding:5rem 1.5rem}}
+/* FOUNDER */
+.founder{background:#27312E;padding:8rem 4rem;overflow:hidden;position:relative}
+.founder::before{content:"";position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(16,187,130,.06) 0%,transparent 65%);pointer-events:none}
+.founder-inner{max-width:1060px;margin:0 auto;position:relative;z-index:2}
+.founder-top{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-bottom:4rem}
+.founder-l .eyebrow .eyebrow-bar{background:var(--green)}
+.founder-l .eyebrow span{color:var(--green)}
+.founder-l h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--white);line-height:1.1;margin-bottom:1.4rem}
+.founder-l h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.founder-l p{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.82;font-weight:300;margin-bottom:.9rem}
+.founder-stat{display:inline-flex;align-items:center;gap:.8rem;background:rgba(16,187,130,.08);border:1px solid var(--green-line);border-radius:var(--r-md);padding:1rem 1.4rem;margin-top:.6rem}
+.founder-stat-num{font-size:2rem;font-weight:300;color:var(--green);letter-spacing:-.04em;line-height:1}
+.founder-stat-txt{font-size:.78rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.4;max-width:160px}
+.founder-r{display:flex;flex-direction:column;gap:1rem}
+.founder-card{background:#2E3C38;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:2rem 2.2rem}
+.founder-card-name{font-size:1.3rem;font-weight:400;color:var(--white);letter-spacing:-.02em;margin-bottom:.2rem}
+.founder-card-title{font-size:.78rem;color:var(--green);font-weight:400;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1rem}
+.founder-card-bio{font-size:.82rem;color:rgba(255,255,255,.42);line-height:1.72;font-weight:300}
+.founder-chartered{background:rgba(16,187,130,.06);border:1px solid var(--green-line);border-radius:var(--r-md);padding:1rem 1.4rem;display:flex;align-items:center;gap:.8rem}
+.founder-chartered-ic{flex-shrink:0;width:36px;height:36px;background:rgba(16,187,130,.12);border-radius:10px;padding:7px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.founder-chartered p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;font-weight:300}
+.founder-chartered p strong{color:var(--green);font-weight:400}
+.founder-quals{border-top:1px solid rgba(255,255,255,.07);padding-top:3rem}
+.founder-quals-hdr{margin-bottom:2rem}
+.founder-quals-hdr h3{font-size:1.1rem;font-weight:400;color:var(--white);letter-spacing:-.02em;margin-bottom:.35rem}
+.founder-quals-hdr p{font-size:.82rem;color:rgba(255,255,255,.38);font-weight:300}
+.quals-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.qual-group{background:#2E3C38;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:1.8rem 2rem}
+.qual-group-title{font-size:.62rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.qual-group-title::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+.qual-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.qual-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.79rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.45}
+.qual-code{flex-shrink:0;font-size:.65rem;font-weight:600;color:var(--green);background:rgba(16,187,130,.1);border:1px solid var(--green-line);border-radius:4px;padding:.15rem .45rem;letter-spacing:.04em;margin-top:1px}
+@media(max-width:1024px){.founder{padding:6rem 2rem}.founder-top{grid-template-columns:1fr;gap:2.5rem}.quals-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.founder{padding:5rem 1.5rem}}
+/* LOGOMARK */
+.hero-toggle{display:flex;align-items:center;justify-content:center;gap:.9rem;margin-bottom:2.2rem;animation:fadeUp .7s ease both}
+.hero-toggle-mark{opacity:1}
+.hero-toggle-label{font-size:.68rem;font-weight:300;color:rgba(255,255,255,.42);letter-spacing:.12em;text-transform:uppercase}
+.toggle-divider{width:1px;height:14px;background:rgba(255,255,255,.15)}
+.pricing-toggle-hero{text-align:center;margin-bottom:2.5rem}
+.ptm{display:inline-flex;flex-direction:column;align-items:center;gap:.65rem}
+.ptm-label{font-size:.7rem;font-weight:300;color:var(--grey-600);letter-spacing:.1em;text-transform:uppercase}
+.eyebrow-mark{display:block;flex-shrink:0}
+.cta-toggle-wrap{display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem}
+.cta-toggle-txt{font-size:.7rem;font-weight:300;color:rgba(255,255,255,.32);letter-spacing:.12em;text-transform:uppercase}
+.toggle-watermark{position:absolute;right:4rem;top:50%;transform:translateY(-50%);opacity:.03;pointer-events:none}
+/* COMPARE */
+.compare{background:var(--white);padding:8rem 4rem}
+.compare-hdr{text-align:center;max-width:580px;margin:0 auto 3.5rem}
+.compare-hdr .eyebrow{justify-content:center}
+.compare-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.03em;color:var(--black);line-height:1.1}
+.ctable{max-width:880px;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--grey-200);box-shadow:0 4px 24px rgba(0,0,0,.05)}
+.crow{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;border-bottom:1px solid var(--grey-100)}
+.crow:last-child{border-bottom:none}
+.crow.ch{background:#27312E}
+.crow:not(.ch){background:var(--white)}
+.crow:not(.ch):nth-child(even){background:var(--grey-100)}
+.cc{padding:1rem 1.3rem;font-size:.82rem;display:flex;align-items:center;border-right:1px solid var(--grey-100)}
+.crow.ch .cc{border-right-color:rgba(255,255,255,.05)}
+.cc:last-child{border-right:none}
+.crow.ch .cc{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:300}
+.crow.ch .cc.hl{color:var(--green);background:rgba(16,187,130,.08)}
+.crow:not(.ch) .cc{color:var(--grey-800);font-weight:300}
+.crow:not(.ch) .cc.hl{background:rgba(16,187,130,.05);font-weight:600;color:var(--black)}
+.yes{color:#16A34A;font-size:.9rem}
+.no{color:#DC2626;font-size:.9rem}
+.part{color:#D97706;font-size:.9rem}
+
+/* CTA */
+.ctasec{background:#27312E;padding:8rem 4rem;overflow:hidden;position:relative}
+.ctasec::before{content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(16,187,130,.1) 0%,transparent 65%)}
+.cta-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;z-index:2}
+.cta-l h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.02em;color:var(--white);line-height:1.1;margin-bottom:1.2rem}
+.cta-l h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.cta-l p{font-size:.9rem;color:rgba(255,255,255,.42);line-height:1.78;font-weight:300}
+.cta-r{display:flex;flex-direction:column;gap:.9rem}
+.ccard{display:flex;align-items:flex-start;gap:.9rem;padding:1.2rem 1.4rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);transition:all .2s}
+.ccard:hover{border-color:var(--green-line);background:rgba(16,187,130,.05)}
+.ccard-ic{width:36px;height:36px;flex-shrink:0;border-radius:50%;background:rgba(16,187,130,.1);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;color:var(--green)}
+.ccard-ic svg{width:15px;height:15px}
+.ccard strong{display:block;font-size:.84rem;font-weight:600;color:var(--white);margin-bottom:.1rem}
+.ccard span{font-size:.77rem;color:rgba(255,255,255,.38);font-weight:300}
+.cta-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.3rem}
+.btn-white{background:var(--white);color:var(--black);padding:.85rem 2rem;border-radius:50px;font-size:.83rem;font-weight:400;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-white:hover{background:var(--grey-100);transform:translateY(-1px)}
+.btn-ghost{padding:.85rem 2rem;border-radius:50px;border:1px solid rgba(255,255,255,.18);font-size:.83rem;font-weight:400;color:rgba(255,255,255,.6);text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.38);color:var(--white)}
+.btn-ghost svg{width:13px;height:13px;transition:transform .2s}
+.btn-ghost:hover svg{transform:translateX(3px)}
+
+/* FOOTER */
+footer{background:#1E2825;padding:4rem 4rem 2.2rem;border-top:1px solid rgba(255,255,255,.06)}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:2.8rem;padding-bottom:2.8rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.fb-logo{font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:-.02em;display:block;margin-bottom:.9rem}
+.fb-logo span{color:var(--green)}
+.fb p{font-size:.79rem;line-height:1.78;color:rgba(255,255,255,.3);font-weight:300;max-width:280px}
+.fc h5{font-size:.6rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.fc ul a{font-size:.79rem;color:rgba(255,255,255,.3);text-decoration:none;font-weight:300;transition:color .2s}
+.fc ul a:hover{color:var(--white)}
+.fb-bot{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap}
+.fb-bot p{font-size:.7rem;color:rgba(255,255,255,.18);line-height:1.6}
+.reg{font-size:.68rem;color:rgba(255,255,255,.15);max-width:480px;line-height:1.65;text-align:right;font-weight:300}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:1}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav,nav.scrolled{padding:1rem 2rem}
+  .hero{padding:7rem 2rem 4.5rem}
+  .strip{padding:1.2rem 2rem;gap:1.5rem}
+  .about{padding:6rem 2rem}
+  .about-inner{grid-template-columns:1fr;gap:2.5rem}
+  .advice{padding:6rem 2rem}
+  .advice-grid{grid-template-columns:1fr 1fr}
+  .timeline{padding:6rem 2rem}
+  .charging{padding:6rem 2rem}
+  .charge-vs{grid-template-columns:1fr;gap:0}
+  .vs-div{flex-direction:row;padding:1.2rem 0}
+  .vs-ln{flex:1;height:1px;width:auto}
+  .pricing{padding:6rem 2rem}
+  .single-plan{grid-template-columns:1fr}
+  .plan-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .compare{padding:6rem 2rem}
+  .ctasec{padding:6rem 2rem}
+  .cta-inner{grid-template-columns:1fr;gap:3rem}
+  footer{padding:3.5rem 2rem 2rem}
+  .fg{grid-template-columns:1fr;gap:2rem}
+  .reg{text-align:left}
+}
+@media(max-width:640px){
+  nav{padding:.9rem 1.5rem}
+  .nav-links{display:none}
+  .hero{padding:6.5rem 1.5rem 4rem}
+  .strip{padding:1rem 1.5rem}
+  .sep{display:none}
+  .about,.advice,.timeline,.charging,.pricing,.compare,.ctasec{padding:5rem 1.5rem}
+  .advice-grid,.plans{grid-template-columns:1fr}
+  .crow{grid-template-columns:1.5fr 1fr 1fr 1fr}
+  .cc{padding:.75rem .6rem;font-size:.71rem}
+  footer{padding:3rem 1.5rem 1.8rem}
+}
+/* COST OF DOING NOTHING */
+.cdn{background:#EEEEEC;padding:8rem 4rem;position:relative;overflow:hidden}
+.cdn-inner{max-width:1100px;margin:0 auto}
+.cdn-hdr{text-align:center;margin-bottom:4rem}
+.cdn-hdr .eyebrow{justify-content:center}
+.cdn-hdr h2{font-size:clamp(2rem,4vw,3rem);font-weight:300;letter-spacing:-.02em;color:var(--black);line-height:1.15;margin-bottom:.8rem}
+.cdn-hdr h2 em{font-style:italic;font-weight:300;color:var(--green)}
+.cdn-hdr p{font-size:.95rem;color:var(--grey-600);font-weight:300}
+.cdn-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+.cdn-card{background:var(--white);border:1px solid var(--grey-200);border-radius:var(--r-lg);padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:all .25s}
+.cdn-card:hover{border-color:var(--green-line);box-shadow:0 8px 30px rgba(0,0,0,.06);transform:translateY(-3px)}
+.cdn-card-top{display:flex;align-items:center;gap:.8rem}
+.cdn-ic{width:38px;height:38px;border-radius:10px;background:var(--green-dim);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.cdn-ic svg{width:17px;height:17px}
+.cdn-card-eyebrow{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.cdn-card h3{font-size:.95rem;font-weight:400;color:var(--black);line-height:1.5;margin:0}
+.cdn-card p{font-size:.8rem;color:var(--grey-600);line-height:1.8;font-weight:300;margin:0}
+.cdn-pill{display:inline-block;margin-top:auto;padding:.35rem .9rem;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);border-radius:50px;font-size:.68rem;font-weight:400;color:#DC2626;letter-spacing:.01em}
+.cdn-banner{background:#27312E;border-radius:var(--r-xl);padding:3rem 3.5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.cdn-banner p{font-size:1rem;color:rgba(255,255,255,.7);font-weight:300;line-height:1.7;max-width:600px;margin:0;font-style:italic}
+@media(max-width:1024px){.cdn{padding:6rem 2rem}.cdn-cards{grid-template-columns:1fr;gap:1rem}.cdn-banner{flex-direction:column;gap:1.5rem;padding:2.2rem 2rem;text-align:center}}
+@media(max-width:640px){.cdn{padding:5rem 1.5rem}}
+/* TESTIMONIALS */
+.testimonials{background:#27312E;padding:8rem 4rem}
+.testimonials-inner{max-width:1100px;margin:0 auto}
+.testimonials-hdr{text-align:center;margin-bottom:3.5rem}
+.testimonials-hdr .eyebrow{justify-content:center}
+.testimonials-hdr .eyebrow-bar{background:linear-gradient(90deg,var(--green),#007D6F)}
+.testimonials-hdr h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;letter-spacing:-.02em;color:var(--white);margin-bottom:1.5rem;line-height:1.2}
+.tm-score{display:flex;align-items:center;justify-content:center;gap:.8rem;flex-wrap:wrap}
+.tm-num{font-size:2rem;font-weight:300;color:var(--green);letter-spacing:-.03em}
+.tm-stars{display:flex;gap:2px;color:var(--green)}
+.tm-stars svg{width:16px;height:16px}
+.tm-label{font-size:.75rem;color:rgba(255,255,255,.4);font-weight:300}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.5rem}
+.tcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:1.8rem;display:flex;flex-direction:column;gap:1rem;transition:all .25s}
+.tcard:hover{background:rgba(255,255,255,.07);border-color:rgba(16,187,130,.25);transform:translateY(-2px)}
+.tcard-stars{display:flex;gap:2px;color:var(--green)}
+.tcard-stars svg{width:13px;height:13px}
+.tcard blockquote{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.75);font-weight:300;font-style:italic;flex:1;margin:0}
+.tcard-author{display:flex;align-items:center;gap:.75rem;margin-top:auto}
+.tcard-initials{width:34px;height:34px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:400;color:var(--green);flex-shrink:0}
+.tcard-name{font-size:.75rem;font-weight:400;color:var(--white)}
+.tcard-source{font-size:.68rem;color:rgba(255,255,255,.35);font-weight:300}
+.testimonials-cta{text-align:center}
+.btn-ghost-dark{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.6rem;border:1px solid rgba(255,255,255,.15);border-radius:50px;font-size:.78rem;font-weight:300;color:rgba(255,255,255,.6);text-decoration:none;transition:all .2s;font-family:"Poppins",sans-serif}
+.btn-ghost-dark:hover{border-color:var(--green-line);color:var(--green)}
+.btn-ghost-dark svg{width:14px;height:14px}
+@media(max-width:1024px){.testimonials-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.testimonials{padding:5rem 1.5rem}.testimonials-grid{grid-template-columns:1fr}}
+/* FAQ */
+.faq{background:#EEEEEC;padding:8rem 4rem}
+.faq-inner{max-width:800px;margin:0 auto}
+.faq-hdr{text-align:center;margin-bottom:3.5rem}
+.faq-hdr .eyebrow{justify-content:center}
+.faq-hdr h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;letter-spacing:-.02em;color:var(--black);margin-bottom:.8rem}
+.faq-hdr p{font-size:.9rem;color:var(--grey-600);font-weight:300}
+.faq-list{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{background:var(--white);border:1px solid var(--grey-200);border-radius:var(--r-md);overflow:hidden;transition:border-color .2s}
+.faq-item.open{border-color:var(--green-line)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.3rem 1.6rem;background:none;border:none;cursor:pointer;text-align:left;font-family:"Poppins",sans-serif;font-size:.88rem;font-weight:400;color:var(--black);transition:color .2s}
+.faq-q:hover{color:var(--green)}
+.faq-item.open .faq-q{color:var(--green)}
+.faq-icon{flex-shrink:0;width:18px;height:18px;transition:transform .3s ease;color:var(--grey-400)}
+.faq-item.open .faq-icon{transform:rotate(180deg);color:var(--green)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 1.6rem 1.3rem;font-size:.83rem;color:var(--grey-600);line-height:1.8;font-weight:300;margin:0}
+@media(max-width:640px){.faq{padding:5rem 1.5rem}.faq-q{padding:1.1rem 1.2rem;font-size:.82rem}.faq-a p{padding:0 1.2rem 1.1rem}}
+.cta-inner-full{grid-template-columns:1fr 1fr;gap:5rem}
+.cta-reassure{display:flex;flex-direction:column;gap:.7rem;margin-top:2rem}
+.subscribe-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-xl);padding:2.5rem}
+.sf-header{margin-bottom:1.8rem}
+.sf-price{font-size:3rem;font-weight:300;color:var(--white);letter-spacing:-.04em;line-height:1;margin-bottom:.5rem}
+.sf-per{font-size:1.2rem;color:rgba(255,255,255,.4);font-weight:300;margin-left:.2rem}
+.sf-header p{font-size:.8rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
+.sf-fields{display:flex;flex-direction:column;gap:.9rem;margin-bottom:1.4rem}
+.sf-field{display:flex;flex-direction:column;gap:.4rem}
+.sf-field label{font-size:.7rem;font-weight:400;color:rgba(255,255,255,.6);letter-spacing:.04em}
+.sf-optional{color:rgba(255,255,255,.3);font-weight:300}
+.sf-field input,.sf-field textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-sm);padding:.75rem 1rem;font-family:"Poppins",sans-serif;font-size:.82rem;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;resize:none}
+.sf-field input::placeholder,.sf-field textarea::placeholder{color:rgba(255,255,255,.25)}
+.sf-field input:focus,.sf-field textarea:focus{border-color:var(--green-line);background:rgba(255,255,255,.1)}
+.sf-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:.6rem;background:var(--green);color:var(--white);border:none;border-radius:50px;padding:1rem;font-family:"Poppins",sans-serif;font-size:.88rem;font-weight:400;cursor:pointer;transition:all .2s;box-shadow:0 4px 24px rgba(16,187,130,.3)}
+.sf-submit:hover{background:#007D6F;transform:translateY(-1px)}
+.sf-submit svg{width:16px;height:16px}
+.sf-small{font-size:.65rem;color:rgba(255,255,255,.25);font-weight:300;line-height:1.6;text-align:center;margin-top:.9rem}
+.sf-success{text-align:center;padding:3rem 2rem}
+.sf-success-ic{width:64px;height:64px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green-line);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--green)}
+.sf-success-ic svg{width:28px;height:28px}
+.sf-success h3{font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:.7rem}
+.sf-success p{font-size:.85rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.7}
+@media(max-width:1024px){.cta-inner-full{grid-template-columns:1fr;gap:3rem}}
+/* STICKY BAR */
+.sticky-bar{position:fixed;bottom:-100px;left:0;right:0;z-index:999;padding:0 2rem 1.2rem;transition:bottom .4s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.sticky-bar.visible{bottom:0;pointer-events:all}
+.sticky-bar-inner{max-width:1100px;margin:0 auto;background:#27312E;border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;box-shadow:0 8px 40px rgba(0,0,0,.35);backdrop-filter:blur(10px)}
+.sticky-bar-left{display:flex;align-items:center;gap:.9rem}
+.sticky-bar-logo{display:flex;align-items:center}
+.sticky-bar-text{display:flex;flex-direction:column;gap:.1rem}
+.sticky-bar-title{font-size:.78rem;font-weight:400;color:var(--white);letter-spacing:.02em}
+.sticky-bar-sub{font-size:.68rem;font-weight:300;color:rgba(255,255,255,.4)}
+.sticky-bar-right{display:flex;align-items:center;gap:1.2rem}
+.sticky-bar-pills{display:flex;gap:.5rem}
+.sticky-bar-pills span{font-size:.62rem;font-weight:300;color:rgba(255,255,255,.45);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.25rem .65rem;white-space:nowrap}
+.sticky-bar-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--green);color:var(--white);border-radius:50px;padding:.65rem 1.4rem;font-family:"Poppins",sans-serif;font-size:.8rem;font-weight:400;text-decoration:none;white-space:nowrap;transition:all .2s;box-shadow:0 4px 20px rgba(16,187,130,.3)}
+.sticky-bar-btn:hover{background:#007D6F;transform:translateY(-1px)}
+.sticky-bar-btn svg{width:14px;height:14px}
+@media(max-width:768px){.sticky-bar-pills{display:none}.sticky-bar-sub{display:none}.sticky-bar{padding:0 1rem .8rem}}
+@media(max-width:480px){.sticky-bar-logo{display:none}}
+.nav-links a.nav-active{color:var(--green)!important}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjU0NSA0MjUgODMwIDI0MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSI2NCI+CiAgPGcgZmlsbD0iY3VycmVudENvbG9yIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgICBkPSJNIDYwOS4yMTg3NSA2MDcuMDU4NTk0IEMgNjA3LjAxMTcxOSA2MTAuOTIxODc1IDYwNC4wODk4NDQgNjEzLjc4MTI1IDYwMC40ODA0NjkgNjE1LjY0MDYyNSBDIDU5Ni44NzEwOTQgNjE3LjUgNTkyLjk2MDkzOCA2MTguNDI5Njg4IDU4OC43MzgyODEgNjE4LjQyOTY4OCBDIDU4NC41MTk1MzEgNjE4LjQyOTY4OCA1ODAuNjA5Mzc1IDYxNy41IDU3NyA2MTUuNjQwNjI1IEMgNTczLjM5MDYyNSA2MTMuNzgxMjUgNTcwLjQ2ODc1IDYxMC45MjE4NzUgNTY4LjI2MTcxOSA2MDcuMDU4NTk0IEMgNTY2LjAzOTA2MiA2MDMuMTk5MjE5IDU2NC45Mjk2ODggNTk4LjQ0MTQwNiA1NjQuOTI5Njg4IDU5Mi43ODkwNjIgQyA1NjQuOTI5Njg4IDU4Ny4xNDg0MzggNTY2LjAzOTA2MiA1ODIuNDEwMTU2IDU2OC4yNjE3MTkgNTc4LjU4OTg0NCBDIDU3MC40Njg3NSA1NzQuNzYxNzE5IDU3My4zOTA2MjUgNTcxLjkyMTg3NSA1NzcgNTcwLjA1ODU5NCBDIDU4MC42MDkzNzUgNTY4LjE5OTIxOSA1ODQuNTE5NTMxIDU2Ny4yNjk1MzEgNTg4LjczODI4MSA1NjcuMjY5NTMxIEMgNTkzLjAzMTI1IDU2Ny4yNjk1MzEgNTk2Ljk4MDQ2OSA1NjguMTk5MjE5IDYwMC41ODk4NDQgNTcwLjA1ODU5NCBDIDYwNC4xOTkyMTkgNTcxLjkyMTg3NSA2MDcuMTAxNTYyIDU3NC43NjE3MTkgNjA5LjI4MTI1IDU3OC41ODk4NDQgQyA2MTEuNDYwOTM4IDU4Mi40MTAxNTYgNjEyLjU1MDc4MSA1ODcuMTQ4NDM4IDYxMi41NTA3ODEgNTkyLjc4OTA2MiBDIDYxMi41NTA3ODEgNTk4LjQ0MTQwNiA2MTEuNDQxNDA2IDYwMy4xOTkyMTkgNjA5LjIxODc1IDYwNy4wNTg1OTQgTSA2MTMuNzgxMjUgNTc2LjkyMTg3NSBDIDYxMS4zMDg1OTQgNTcyLjQyMTg3NSA2MDcuODk4NDM4IDU2OC45Njg3NSA2MDMuNTM5MDYyIDU2Ni41NzgxMjUgQyA1OTkuMTc5Njg4IDU2NC4xNzk2ODggNTk0LjIzODI4MSA1NjIuOTgwNDY5IDU4OC43MzgyODEgNTYyLjk4MDQ2OSBDIDU4My4zMDg1OTQgNTYyLjk4MDQ2OSA1NzguNDEwMTU2IDU2NC4xNzk2ODggNTc0LjA1MDc4MSA1NjYuNTc4MTI1IEMgNTY5LjY5MTQwNiA1NjguOTY4NzUgNTY2LjI2MTcxOSA1NzIuNDIxODc1IDU2My43NSA1NzYuOTIxODc1IEMgNTYxLjI1IDU4MS40Mjk2ODggNTYwIDU4Ni43MTg3NSA1NjAgNTkyLjc4OTA2MiBDIDU2MCA1OTguODcxMDk0IDU2MS4yNSA2MDQuMTc5Njg4IDU2My43NSA2MDguNzE4NzUgQyA1NjYuMjYxNzE5IDYxMy4yNjE3MTkgNTY5LjY5MTQwNiA2MTYuNzMwNDY5IDU3NC4wNTA3ODEgNjE5LjEyMTA5NCBDIDU3OC40MTAxNTYgNjIxLjUxOTUzMSA1ODMuMzA4NTk0IDYyMi43MTA5MzggNTg4LjczODI4MSA2MjIuNzEwOTM4IEMgNTk0LjIzODI4MSA2MjIuNzEwOTM4IDU5OS4xNzk2ODggNjIxLjUxOTUzMSA2MDMuNTM5MDYyIDYxOS4xMjEwOTQgQyA2MDcuODk4NDM4IDYxNi43MzA0NjkgNjExLjMwODU5NCA2MTMuMjgxMjUgNjEzLjc4MTI1IDYwOC43Njk1MzEgQyA2MTYuMjUgNjA0LjI2OTUzMSA2MTcuNDgwNDY5IDU5OC45NDE0MDYgNjE3LjQ4MDQ2OSA1OTIuNzg5MDYyIEMgNjE3LjQ4MDQ2OSA1ODYuNzE4NzUgNjE2LjI1IDU4MS40Mjk2ODggNjEzLjc4MTI1IDU3Ni45MjE4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA2NzEuOTQ5MjE5IDU2My43MzA0NjkgTCA2NzEuOTQ5MjE5IDU5NC42MjEwOTQgQyA2NzEuOTQ5MjE5IDYwMi42Mjg5MDYgNjcwLjA1ODU5NCA2MDguNjkxNDA2IDY2Ni4yNjk1MzEgNjEyLjgwMDc4MSBDIDY2Mi40ODA0NjkgNjE2LjkxMDE1NiA2NTcuMzk4NDM4IDYxOC45NjA5MzggNjUxLjAzOTA2MiA2MTguOTYwOTM4IEMgNjQ0Ljk2MDkzOCA2MTguOTYwOTM4IDY0MC4xNzE4NzUgNjE3LjEyMTA5NCA2MzYuNjcxODc1IDYxMy40NDE0MDYgQyA2MzMuMTcxODc1IDYwOS43NjE3MTkgNjMxLjQxMDE1NiA2MDQuNDQ5MjE5IDYzMS40MTAxNTYgNTk3LjUxMTcxOSBMIDYzMS40MTAxNTYgNTYzLjczMDQ2OSBMIDYyNi42OTkyMTkgNTYzLjczMDQ2OSBMIDYyNi42OTkyMTkgNTk3LjYyMTA5NCBDIDYyNi42OTkyMTkgNjA2LjA1ODU5NCA2MjguODM5ODQ0IDYxMi40MjE4NzUgNjMzLjEyODkwNiA2MTYuNzEwOTM4IEMgNjM3LjQyMTg3NSA2MjEgNjQyLjk2MDkzOCA2MjMuMTQwNjI1IDY0OS43NSA2MjMuMTQwNjI1IEMgNjU1LjAzOTA2MiA2MjMuMTQwNjI1IDY1OS43MTA5MzggNjIxLjc1IDY2My43NSA2MTguOTYwOTM4IEMgNjY3Ljc4OTA2MiA2MTYuMTcxODc1IDY3MC41MTk1MzEgNjEyLjEwMTU2MiA2NzEuOTQ5MjE5IDYwNi43MzgyODEgTCA2NzEuOTQ5MjE5IDYyMS45Njg3NSBMIDY3Ni44OTA2MjUgNjIxLjk2ODc1IEwgNjc2Ljg5MDYyNSA1NjMuNzMwNDY5IFogTSA2NzEuOTQ5MjE5IDU2My43MzA0NjkgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA3MTQuNjIxMDk0IDU2OC4xMjg5MDYgTCA3MTQuNjIxMDk0IDU2My43MzA0NjkgTCA2OTcuMzUxNTYyIDU2My43MzA0NjkgTCA2OTcuMzUxNTYyIDU0OC45Mjk2ODggTCA2OTIuNTE5NTMxIDU0OC45Mjk2ODggTCA2OTIuNTE5NTMxIDU2My43MzA0NjkgTCA2ODMuMzAwNzgxIDU2My43MzA0NjkgTCA2ODMuMzAwNzgxIDU2OC4xMjg5MDYgTCA2OTIuNTE5NTMxIDU2OC4xMjg5MDYgTCA2OTIuNTE5NTMxIDYwNS41NTg1OTQgQyA2OTIuNTE5NTMxIDYxMS40ODgyODEgNjkzLjc2MTcxOSA2MTUuNzEwOTM4IDY5Ni4yMTg3NSA2MTguMjEwOTM4IEMgNjk4LjY5MTQwNiA2MjAuNzEwOTM4IDcwMi42MDkzNzUgNjIxLjk2ODc1IDcwNy45Njg3NSA2MjEuOTY4NzUgTCA3MTQuNjIxMDk0IDYyMS45Njg3NSBMIDcxNC42MjEwOTQgNjE3LjU3MDMxMiBMIDcwOC41IDYxNy41NzAzMTIgQyA3MDQuMzU5Mzc1IDYxNy41NzAzMTIgNzAxLjQ2MDkzOCA2MTYuNzMwNDY5IDY5OS44MjAzMTIgNjE1LjA1MDc4MSBDIDY5OC4xNzE4NzUgNjEzLjM3MTA5NCA2OTcuMzUxNTYyIDYxMC4yMTA5MzggNjk3LjM1MTU2MiA2MDUuNTU4NTk0IEwgNjk3LjM1MTU2MiA1NjguMTI4OTA2IFogTSA3MTQuNjIxMDk0IDU2OC4xMjg5MDYgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA3NzMuNjQ4NDM4IDYxMS41NTg1OTQgQyA3NjkuMzIwMzEyIDYxNi4xNDA2MjUgNzYzLjUxOTUzMSA2MTguNDI5Njg4IDc1Ni4yMTg3NSA2MTguNDI5Njg4IEMgNzUxLjY0ODQzOCA2MTguNDI5Njg4IDc0Ny41MzkwNjIgNjE3LjM3MTA5NCA3NDMuODkwNjI1IDYxNS4yNjE3MTkgQyA3NDAuMjUgNjEzLjE2MDE1NiA3MzcuMzc4OTA2IDYxMC4xNDg0MzggNzM1LjMwODU5NCA2MDYuMjUgQyA3MzMuMjM4MjgxIDYwMi4zNTkzNzUgNzMyLjE5OTIxOSA1OTcuODcxMDk0IDczMi4xOTkyMTkgNTkyLjc4OTA2MiBDIDczMi4xOTkyMTkgNTg3LjcxODc1IDczMy4yMzgyODEgNTgzLjI1IDczNS4zMDg1OTQgNTc5LjM5MDYyNSBDIDczNy4zNzg5MDYgNTc1LjUzMTI1IDc0MC4yNSA1NzIuNTM5MDYyIDc0My44OTA2MjUgNTcwLjQ0MTQwNiBDIDc0Ny41MzkwNjIgNTY4LjMyODEyNSA3NTEuNjQ4NDM4IDU2Ny4yNjk1MzEgNzU2LjIxODc1IDU2Ny4yNjk1MzEgQyA3NjMuNTE5NTMxIDU2Ny4yNjk1MzEgNzY5LjMyMDMxMiA1NjkuNTU4NTk0IDc3My42NDg0MzggNTc0LjEyODkwNiBDIDc3Ny45ODA0NjkgNTc4LjcxMDkzOCA3ODAuMTQwNjI1IDU4NC45Mjk2ODggNzgwLjE0MDYyNSA1OTIuNzg5MDYyIEMgNzgwLjE0MDYyNSA2MDAuNzMwNDY5IDc3Ny45ODA0NjkgNjA2Ljk4ODI4MSA3NzMuNjQ4NDM4IDYxMS41NTg1OTQgTSA3ODEuNDI5Njg4IDU3Ni45MjE4NzUgQyA3NzkuMDcwMzEyIDU3Mi40MjE4NzUgNzc1Ljc4OTA2MiA1NjguOTY4NzUgNzcxLjYwOTM3NSA1NjYuNTc4MTI1IEMgNzY3LjQyOTY4OCA1NjQuMTc5Njg4IDc2Mi42MjEwOTQgNTYyLjk4MDQ2OSA3NTcuMTkxNDA2IDU2Mi45ODA0NjkgQyA3NTAuODk4NDM4IDU2Mi45ODA0NjkgNzQ1LjU1MDc4MSA1NjQuNjQwNjI1IDc0MS4xNjAxNTYgNTY3Ljk2ODc1IEMgNzM2Ljc2MTcxOSA1NzEuMjg5MDYyIDczMy43Njk1MzEgNTc1LjY3MTg3NSA3MzIuMTk5MjE5IDU4MS4xMDkzNzUgTCA3MzIuMTk5MjE5IDU2My43MzA0NjkgTCA3MjcuNDgwNDY5IDU2My43MzA0NjkgTCA3MjcuNDgwNDY5IDY0OS40MjE4NzUgTCA3MzIuMTk5MjE5IDY0OS40MjE4NzUgTCA3MzIuMTk5MjE5IDYwNC41ODk4NDQgQyA3MzMuNzY5NTMxIDYxMC4wMzEyNSA3MzYuNzYxNzE5IDYxNC4zOTg0MzggNzQxLjE2MDE1NiA2MTcuNzMwNDY5IEMgNzQ1LjU1MDc4MSA2MjEuMDUwNzgxIDc1MC44OTg0MzggNjIyLjcxMDkzOCA3NTcuMTkxNDA2IDYyMi43MTA5MzggQyA3NjIuNjIxMDk0IDYyMi43MTA5MzggNzY3LjQyOTY4OCA2MjEuNTE5NTMxIDc3MS42MDkzNzUgNjE5LjEyMTA5NCBDIDc3NS43ODkwNjIgNjE2LjczMDQ2OSA3NzkuMDcwMzEyIDYxMy4yNjE3MTkgNzgxLjQyOTY4OCA2MDguNzE4NzUgQyA3ODMuNzgxMjUgNjA0LjE3OTY4OCA3ODQuOTYwOTM4IDU5OC44NzEwOTQgNzg0Ljk2MDkzOCA1OTIuNzg5MDYyIEMgNzg0Ljk2MDkzOCA1ODYuNzE4NzUgNzgzLjc4MTI1IDU4MS40Mjk2ODggNzgxLjQyOTY4OCA1NzYuOTIxODc1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gNzkyLjczMDQ2OSA2MjEuOTY4NzUgTCA3OTcuNTU4NTk0IDYyMS45Njg3NSBMIDc5Ny41NTg1OTQgNTQyLjYwOTM3NSBMIDc5Mi43MzA0NjkgNTQyLjYwOTM3NSBaIE0gNzkyLjczMDQ2OSA2MjEuOTY4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA4NTYuOTgwNDY5IDYwNi4yNSBDIDg1NC45NDE0MDYgNjEwLjE0ODQzOCA4NTIuMTAxNTYyIDYxMy4xNjAxNTYgODQ4LjQ2MDkzOCA2MTUuMjYxNzE5IEMgODQ0LjgwODU5NCA2MTcuMzcxMDk0IDg0MC42OTkyMTkgNjE4LjQyOTY4OCA4MzYuMTIxMDk0IDYxOC40Mjk2ODggQyA4MjguNzYxNzE5IDYxOC40Mjk2ODggODIyLjkyOTY4OCA2MTYuMTQwNjI1IDgxOC42NDA2MjUgNjExLjU1ODU5NCBDIDgxNC4zNTE1NjIgNjA2Ljk4ODI4MSA4MTIuMjEwOTM4IDYwMC43MzA0NjkgODEyLjIxMDkzOCA1OTIuNzg5MDYyIEMgODEyLjIxMDkzOCA1ODQuOTI5Njg4IDgxNC4zNzEwOTQgNTc4LjcxMDkzOCA4MTguNjk5MjE5IDU3NC4xMjg5MDYgQyA4MjMuMDE5NTMxIDU2OS41NTg1OTQgODI4LjgyODEyNSA1NjcuMjY5NTMxIDgzNi4xMjEwOTQgNTY3LjI2OTUzMSBDIDg0MC42OTkyMTkgNTY3LjI2OTUzMSA4NDQuODA4NTk0IDU2OC4zMjgxMjUgODQ4LjQ2MDkzOCA1NzAuNDQxNDA2IEMgODUyLjEwMTU2MiA1NzIuNTM5MDYyIDg1NC45NDE0MDYgNTc1LjUzMTI1IDg1Ni45ODA0NjkgNTc5LjM5MDYyNSBDIDg1OS4wMTk1MzEgNTgzLjI1IDg2MC4wMzkwNjIgNTg3LjcxODc1IDg2MC4wMzkwNjIgNTkyLjc4OTA2MiBDIDg2MC4wMzkwNjIgNTk3Ljg3MTA5NCA4NTkuMDE5NTMxIDYwMi4zNTkzNzUgODU2Ljk4MDQ2OSA2MDYuMjUgTSA4NjAuMDM5MDYyIDU2My43MzA0NjkgTCA4NjAuMDM5MDYyIDU4MS4xMDkzNzUgQyA4NTguNDYwOTM4IDU3NS42NzE4NzUgODU1LjUgNTcxLjI4OTA2MiA4NTEuMTQwNjI1IDU2Ny45Njg3NSBDIDg0Ni43ODEyNSA1NjQuNjQwNjI1IDg0MS40MTAxNTYgNTYyLjk4MDQ2OSA4MzUuMDUwNzgxIDU2Mi45ODA0NjkgQyA4MjkuNjIxMDk0IDU2Mi45ODA0NjkgODI0LjgwODU5NCA1NjQuMTc5Njg4IDgyMC42Mjg5MDYgNTY2LjU3ODEyNSBDIDgxNi40NDE0MDYgNTY4Ljk2ODc1IDgxMy4xNzE4NzUgNTcyLjQyMTg3NSA4MTAuODA4NTk0IDU3Ni45MjE4NzUgQyA4MDguNDQ5MjE5IDU4MS40Mjk2ODggODA3LjI4MTI1IDU4Ni43MTg3NSA4MDcuMjgxMjUgNTkyLjc4OTA2MiBDIDgwNy4yODEyNSA1OTguODcxMDk0IDgwOC40NDkyMTkgNjA0LjE3OTY4OCA4MTAuODA4NTk0IDYwOC43MTg3NSBDIDgxMy4xNzE4NzUgNjEzLjI2MTcxOSA4MTYuNDQxNDA2IDYxNi43MzA0NjkgODIwLjYyODkwNiA2MTkuMTIxMDk0IEMgODI0LjgwODU5NCA2MjEuNTE5NTMxIDgyOS42MjEwOTQgNjIyLjcxMDkzOCA4MzUuMDUwNzgxIDYyMi43MTA5MzggQyA4NDEuNDEwMTU2IDYyMi43MTA5MzggODQ2Ljc4MTI1IDYyMS4wNTA3ODEgODUxLjE0MDYyNSA2MTcuNzMwNDY5IEMgODU1LjUgNjE0LjM5ODQzOCA4NTguNDYwOTM4IDYxMC4wMzEyNSA4NjAuMDM5MDYyIDYwNC41ODk4NDQgTCA4NjAuMDM5MDYyIDYyMS45Njg3NSBMIDg2NC44NTkzNzUgNjIxLjk2ODc1IEwgODY0Ljg1OTM3NSA1NjMuNzMwNDY5IFogTSA4NjAuMDM5MDYyIDU2My43MzA0NjkgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA5MjAuODk4NDM4IDU2OC45ODgyODEgQyA5MTYuNjA5Mzc1IDU2NC42OTkyMTkgOTExLjAzMTI1IDU2Mi41NTA3ODEgOTA0LjE3MTg3NSA1NjIuNTUwNzgxIEMgODk4Ljg3MTA5NCA1NjIuNTUwNzgxIDg5NC4yMTA5MzggNTYzLjk0OTIxOSA4OTAuMTcxODc1IDU2Ni43MzgyODEgQyA4ODYuMTI4OTA2IDU2OS41MTk1MzEgODgzLjM5ODQzOCA1NzMuNjQwNjI1IDg4MS45Njg3NSA1NzkuMDcwMzEyIEwgODgxLjk2ODc1IDU2My43MzA0NjkgTCA4NzcuMTQwNjI1IDU2My43MzA0NjkgTCA4NzcuMTQwNjI1IDYyMS45Njg3NSBMIDg4MS45Njg3NSA2MjEuOTY4NzUgTCA4ODEuOTY4NzUgNTkwLjk2ODc1IEMgODgxLjk2ODc1IDU4Mi45Njg3NSA4ODMuODc4OTA2IDU3Ni45MTAxNTYgODg3LjY5OTIxOSA1NzIuNzg5MDYyIEMgODkxLjUzMTI1IDU2OC42Nzk2ODggODk2LjU4OTg0NCA1NjYuNjI4OTA2IDkwMi44Nzg5MDYgNTY2LjYyODkwNiBDIDkwOC45NjA5MzggNTY2LjYyODkwNiA5MTMuNzUgNTY4LjQ2ODc1IDkxNy4yNSA1NzIuMTQ4NDM4IEMgOTIwLjc1IDU3NS44MjgxMjUgOTIyLjUgNTgxLjE3OTY4OCA5MjIuNSA1ODguMTc5Njg4IEwgOTIyLjUgNjIxLjk2ODc1IEwgOTI3LjMyODEyNSA2MjEuOTY4NzUgTCA5MjcuMzI4MTI1IDU4Ny45Njg3NSBDIDkyNy4zMjgxMjUgNTc5LjYwMTU2MiA5MjUuMTkxNDA2IDU3My4yODEyNSA5MjAuODk4NDM4IDU2OC45ODgyODEgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMDAwLjk0MTQwNiA1NDkuNTc4MTI1IEMgMTAwMy4yMzA0NjkgNTQ3LjM1OTM3NSAxMDA3LjMwODU5NCA1NDYuMjUgMTAxMy4xNjc5NjkgNTQ2LjI1IEwgMTAxMy4xNjc5NjkgNTQxLjg1OTM3NSBDIDEwMDUuOTQ5MjE5IDU0MS43ODkwNjIgMTAwMC43MTA5MzggNTQzLjI2OTUzMSA5OTcuNDYwOTM4IDU0Ni4zMDg1OTQgQyA5OTQuMjEwOTM4IDU0OS4zMzk4NDQgOTkyLjU3ODEyNSA1NTMuOTY4NzUgOTkyLjU3ODEyNSA1NjAuMTkxNDA2IEwgOTkyLjU3ODEyNSA1NjMuNzMwNDY5IEwgOTgzLjU3MDMxMiA1NjMuNzMwNDY5IEwgOTgzLjU3MDMxMiA1NjguMTI4OTA2IEwgOTkyLjU3ODEyNSA1NjguMTI4OTA2IEwgOTkyLjU3ODEyNSA2MjEuOTY4NzUgTCA5OTcuNTExNzE5IDYyMS45Njg3NSBMIDk5Ny41MTE3MTkgNTY4LjEyODkwNiBMIDEwMTMuMTY3OTY5IDU2OC4xMjg5MDYgTCAxMDEzLjE2Nzk2OSA1NjMuNzMwNDY5IEwgOTk3LjUxMTcxOSA1NjMuNzMwNDY5IEwgOTk3LjUxMTcxOSA1NjAuNTE5NTMxIEMgOTk3LjUxMTcxOSA1NTUuNDQxNDA2IDk5OC42NjAxNTYgNTUxLjc4OTA2MiAxMDAwLjk0MTQwNiA1NDkuNTc4MTI1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTAzMC41MzkwNjIgNTQzLjMwMDc4MSBDIDEwMjkuNzUgNTQyLjU1MDc4MSAxMDI4Ljc1IDU0Mi4xNzk2ODggMTAyNy41MzkwNjIgNTQyLjE3OTY4OCBDIDEwMjYuMzIwMzEyIDU0Mi4xNzk2ODggMTAyNS4zMzk4NDQgNTQyLjU1MDc4MSAxMDI0LjU4OTg0NCA1NDMuMzAwNzgxIEMgMTAyMy44Mzk4NDQgNTQ0LjA1MDc4MSAxMDIzLjQ2MDkzOCA1NDUgMTAyMy40NjA5MzggNTQ2LjE0ODQzOCBDIDEwMjMuNDYwOTM4IDU0Ny4zNTkzNzUgMTAyMy44Mzk4NDQgNTQ4LjMzOTg0NCAxMDI0LjU4OTg0NCA1NDkuMDg5ODQ0IEMgMTAyNS4zMzk4NDQgNTQ5LjgzOTg0NCAxMDI2LjMyMDMxMiA1NTAuMjE4NzUgMTAyNy41MzkwNjIgNTUwLjIxODc1IEMgMTAyOC43NSA1NTAuMjE4NzUgMTAyOS43NSA1NDkuODM5ODQ0IDEwMzAuNTM5MDYyIDU0OS4wODk4NDQgQyAxMDMxLjMyODEyNSA1NDguMzM5ODQ0IDEwMzEuNzE4NzUgNTQ3LjM1OTM3NSAxMDMxLjcxODc1IDU0Ni4xNDg0MzggQyAxMDMxLjcxODc1IDU0NSAxMDMxLjMyODEyNSA1NDQuMDUwNzgxIDEwMzAuNTM5MDYyIDU0My4zMDA3ODEgTSAxMDI1LjE3OTY4OCA2MjEuOTY4NzUgTCAxMDMwLjAxMTcxOSA2MjEuOTY4NzUgTCAxMDMwLjAxMTcxOSA1NjMuNzMwNDY5IEwgMTAyNS4xNzk2ODggNTYzLjczMDQ2OSBaIE0gMTAyNS4xNzk2ODggNjIxLjk2ODc1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTA5MS4xMjg5MDYgNTY4Ljk4ODI4MSBDIDEwODYuODM5ODQ0IDU2NC42OTkyMTkgMTA4MS4yNjk1MzEgNTYyLjU1MDc4MSAxMDc0LjM5ODQzOCA1NjIuNTUwNzgxIEMgMTA2OS4xMDkzNzUgNTYyLjU1MDc4MSAxMDY0LjQ0OTIxOSA1NjMuOTQ5MjE5IDEwNjAuNDEwMTU2IDU2Ni43MzgyODEgQyAxMDU2LjM3MTA5NCA1NjkuNTE5NTMxIDEwNTMuNjI4OTA2IDU3My42NDA2MjUgMTA1Mi4xOTkyMTkgNTc5LjA3MDMxMiBMIDEwNTIuMTk5MjE5IDU2My43MzA0NjkgTCAxMDQ3LjM3ODkwNiA1NjMuNzMwNDY5IEwgMTA0Ny4zNzg5MDYgNjIxLjk2ODc1IEwgMTA1Mi4xOTkyMTkgNjIxLjk2ODc1IEwgMTA1Mi4xOTkyMTkgNTkwLjk2ODc1IEMgMTA1Mi4xOTkyMTkgNTgyLjk2ODc1IDEwNTQuMTIxMDk0IDU3Ni45MTAxNTYgMTA1Ny45NDE0MDYgNTcyLjc4OTA2MiBDIDEwNjEuNzYxNzE5IDU2OC42Nzk2ODggMTA2Ni44MjAzMTIgNTY2LjYyODkwNiAxMDczLjEyMTA5NCA1NjYuNjI4OTA2IEMgMTA3OS4xOTE0MDYgNTY2LjYyODkwNiAxMDgzLjk4MDQ2OSA1NjguNDY4NzUgMTA4Ny40ODgyODEgNTcyLjE0ODQzOCBDIDEwOTAuOTg4MjgxIDU3NS44MjgxMjUgMTA5Mi43MzgyODEgNTgxLjE3OTY4OCAxMDkyLjczODI4MSA1ODguMTc5Njg4IEwgMTA5Mi43MzgyODEgNjIxLjk2ODc1IEwgMTA5Ny41NzAzMTIgNjIxLjk2ODc1IEwgMTA5Ny41NzAzMTIgNTg3Ljk2ODc1IEMgMTA5Ny41NzAzMTIgNTc5LjYwMTU2MiAxMDk1LjQyMTg3NSA1NzMuMjgxMjUgMTA5MS4xMjg5MDYgNTY4Ljk4ODI4MSAiLz4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgICBkPSJNIDExNTcuNDgwNDY5IDYwNi4yNSBDIDExNTUuNDQxNDA2IDYxMC4xNDg0MzggMTE1Mi42MDE1NjIgNjEzLjE2MDE1NiAxMTQ4Ljk0OTIxOSA2MTUuMjYxNzE5IEMgMTE0NS4zMDg1OTQgNjE3LjM3MTA5NCAxMTQxLjE5OTIxOSA2MTguNDI5Njg4IDExMzYuNjIxMDk0IDYxOC40Mjk2ODggQyAxMTI5LjI2MTcxOSA2MTguNDI5Njg4IDExMjMuNDI5Njg4IDYxNi4xNDA2MjUgMTExOS4xNDA2MjUgNjExLjU1ODU5NCBDIDExMTQuODUxNTYyIDYwNi45ODgyODEgMTExMi43MTA5MzggNjAwLjczMDQ2OSAxMTEyLjcxMDkzOCA1OTIuNzg5MDYyIEMgMTExMi43MTA5MzggNTg0LjkyOTY4OCAxMTE0Ljg3MTA5NCA1NzguNzEwOTM4IDExMTkuMTkxNDA2IDU3NC4xMjg5MDYgQyAxMTIzLjUxOTUzMSA1NjkuNTU4NTk0IDExMjkuMzI4MTI1IDU2Ny4yNjk1MzEgMTEzNi42MjEwOTQgNTY3LjI2OTUzMSBDIDExNDEuMTk5MjE5IDU2Ny4yNjk1MzEgMTE0NS4zMDg1OTQgNTY4LjMyODEyNSAxMTQ4Ljk0OTIxOSA1NzAuNDQxNDA2IEMgMTE1Mi42MDE1NjIgNTcyLjUzOTA2MiAxMTU1LjQ0MTQwNiA1NzUuNTMxMjUgMTE1Ny40ODA0NjkgNTc5LjM5MDYyNSBDIDExNTkuNTE5NTMxIDU4My4yNSAxMTYwLjUzOTA2MiA1ODcuNzE4NzUgMTE2MC41MzkwNjIgNTkyLjc4OTA2MiBDIDExNjAuNTM5MDYyIDU5Ny44NzEwOTQgMTE1OS41MTk1MzEgNjAyLjM1OTM3NSAxMTU3LjQ4MDQ2OSA2MDYuMjUgTSAxMTYwLjUzOTA2MiA1NjMuNzMwNDY5IEwgMTE2MC41MzkwNjIgNTgxLjEwOTM3NSBDIDExNTguOTYwOTM4IDU3NS42NzE4NzUgMTE1NiA1NzEuMjg5MDYyIDExNTEuNjQwNjI1IDU2Ny45Njg3NSBDIDExNDcuMjY5NTMxIDU2NC42NDA2MjUgMTE0MS45MTAxNTYgNTYyLjk4MDQ2OSAxMTM1LjU1MDc4MSA1NjIuOTgwNDY5IEMgMTEzMC4xMjEwOTQgNTYyLjk4MDQ2OSAxMTI1LjMwODU5NCA1NjQuMTc5Njg4IDExMjEuMTI4OTA2IDU2Ni41NzgxMjUgQyAxMTE2Ljk0MTQwNiA1NjguOTY4NzUgMTExMy42NzE4NzUgNTcyLjQyMTg3NSAxMTExLjMwODU5NCA1NzYuOTIxODc1IEMgMTEwOC45NDkyMTkgNTgxLjQyOTY4OCAxMTA3Ljc2OTUzMSA1ODYuNzE4NzUgMTEwNy43Njk1MzEgNTkyLjc4OTA2MiBDIDExMDcuNzY5NTMxIDU5OC44NzEwOTQgMTEwOC45NDkyMTkgNjA0LjE3OTY4OCAxMTExLjMwODU5NCA2MDguNzE4NzUgQyAxMTEzLjY3MTg3NSA2MTMuMjYxNzE5IDExMTYuOTQxNDA2IDYxNi43MzA0NjkgMTEyMS4xMjg5MDYgNjE5LjEyMTA5NCBDIDExMjUuMzA4NTk0IDYyMS41MTk1MzEgMTEzMC4xMjEwOTQgNjIyLjcxMDkzOCAxMTM1LjU1MDc4MSA2MjIuNzEwOTM4IEMgMTE0MS45MTAxNTYgNjIyLjcxMDkzOCAxMTQ3LjI2OTUzMSA2MjEuMDUwNzgxIDExNTEuNjQwNjI1IDYxNy43MzA0NjkgQyAxMTU2IDYxNC4zOTg0MzggMTE1OC45NjA5MzggNjEwLjAzMTI1IDExNjAuNTM5MDYyIDYwNC41ODk4NDQgTCAxMTYwLjUzOTA2MiA2MjEuOTY4NzUgTCAxMTY1LjM1OTM3NSA2MjEuOTY4NzUgTCAxMTY1LjM1OTM3NSA1NjMuNzMwNDY5IFogTSAxMTYwLjUzOTA2MiA1NjMuNzMwNDY5ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTIyMS43MTg3NSA1NjguOTg4MjgxIEMgMTIxNy40Mjk2ODggNTY0LjY5OTIxOSAxMjExLjg1MTU2MiA1NjIuNTUwNzgxIDEyMDQuOTg4MjgxIDU2Mi41NTA3ODEgQyAxMTk5LjY5MTQwNiA1NjIuNTUwNzgxIDExOTUuMDMxMjUgNTYzLjk0OTIxOSAxMTkwLjk4ODI4MSA1NjYuNzM4MjgxIEMgMTE4Ni45NDkyMTkgNTY5LjUxOTUzMSAxMTg0LjIxODc1IDU3My42NDA2MjUgMTE4Mi43ODkwNjIgNTc5LjA3MDMxMiBMIDExODIuNzg5MDYyIDU2My43MzA0NjkgTCAxMTc3Ljk2MDkzOCA1NjMuNzMwNDY5IEwgMTE3Ny45NjA5MzggNjIxLjk2ODc1IEwgMTE4Mi43ODkwNjIgNjIxLjk2ODc1IEwgMTE4Mi43ODkwNjIgNTkwLjk2ODc1IEMgMTE4Mi43ODkwNjIgNTgyLjk2ODc1IDExODQuNjk5MjE5IDU3Ni45MTAxNTYgMTE4OC41MTk1MzEgNTcyLjc4OTA2MiBDIDExOTIuMzUxNTYyIDU2OC42Nzk2ODggMTE5Ny40MTAxNTYgNTY2LjYyODkwNiAxMjAzLjY5OTIxOSA1NjYuNjI4OTA2IEMgMTIwOS43ODEyNSA1NjYuNjI4OTA2IDEyMTQuNTcwMzEyIDU2OC40Njg3NSAxMjE4LjA3MDMxMiA1NzIuMTQ4NDM4IEMgMTIyMS41NzAzMTIgNTc1LjgyODEyNSAxMjIzLjMyMDMxMiA1ODEuMTc5Njg4IDEyMjMuMzIwMzEyIDU4OC4xNzk2ODggTCAxMjIzLjMyMDMxMiA2MjEuOTY4NzUgTCAxMjI4LjE0ODQzOCA2MjEuOTY4NzUgTCAxMjI4LjE0ODQzOCA1ODcuOTY4NzUgQyAxMjI4LjE0ODQzOCA1NzkuNjAxNTYyIDEyMjYuMDExNzE5IDU3My4yODEyNSAxMjIxLjcxODc1IDU2OC45ODgyODEgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMjgwLjQyOTY4OCA2MTMuOTIxODc1IEMgMTI3Ni40MTc5NjkgNjE2LjkyOTY4OCAxMjcxLjQ4ODI4MSA2MTguNDI5Njg4IDEyNjUuNjI4OTA2IDYxOC40Mjk2ODggQyAxMjYxLjQxMDE1NiA2MTguNDI5Njg4IDEyNTcuNTUwNzgxIDYxNy41IDEyNTQuMDUwNzgxIDYxNS42NDA2MjUgQyAxMjUwLjUzOTA2MiA2MTMuNzgxMjUgMTI0Ny43MTg3NSA2MTAuOTIxODc1IDEyNDUuNTc4MTI1IDYwNy4wNTg1OTQgQyAxMjQzLjQyOTY4OCA2MDMuMTk5MjE5IDEyNDIuMzU5Mzc1IDU5OC40NDE0MDYgMTI0Mi4zNTkzNzUgNTkyLjc4OTA2MiBDIDEyNDIuMzU5Mzc1IDU4Ny4xNDg0MzggMTI0My40Mjk2ODggNTgyLjM5MDYyNSAxMjQ1LjU3ODEyNSA1NzguNTMxMjUgQyAxMjQ3LjcxODc1IDU3NC42NzE4NzUgMTI1MC41MzkwNjIgNTcxLjgwODU5NCAxMjU0LjA1MDc4MSA1NjkuOTQ5MjE5IEMgMTI1Ny41NTA3ODEgNTY4LjA4OTg0NCAxMjYxLjQxMDE1NiA1NjcuMTYwMTU2IDEyNjUuNjI4OTA2IDU2Ny4xNjAxNTYgQyAxMjcxLjQ4ODI4MSA1NjcuMTYwMTU2IDEyNzYuNDE3OTY5IDU2OC42NzE4NzUgMTI4MC40Mjk2ODggNTcxLjY3MTg3NSBDIDEyODQuNDI5Njg4IDU3NC42NzE4NzUgMTI4Ni44NTkzNzUgNTc4Ljc1IDEyODcuNzE4NzUgNTgzLjg5MDYyNSBMIDEyOTIuNzYxNzE5IDU4My44OTA2MjUgQyAxMjkxLjY5MTQwNiA1NzcuNjAxNTYyIDEyODguNzYxNzE5IDU3Mi41MzkwNjIgMTI4My45Njg3NSA1NjguNzE4NzUgQyAxMjc5LjE3OTY4OCA1NjQuODk4NDM4IDEyNzMuMTAxNTYyIDU2Mi45ODA0NjkgMTI2NS43MzgyODEgNTYyLjk4MDQ2OSBDIDEyNjAuMjMwNDY5IDU2Mi45ODA0NjkgMTI1NS4zNTE1NjIgNTY0LjE3OTY4OCAxMjUxLjEwMTU2MiA1NjYuNTc4MTI1IEMgMTI0Ni44Mzk4NDQgNTY4Ljk2ODc1IDEyNDMuNSA1NzIuNDIxODc1IDEyNDEuMDcwMzEyIDU3Ni45MjE4NzUgQyAxMjM4LjY0MDYyNSA1ODEuNDI5Njg4IDEyMzcuNDE3OTY5IDU4Ni43MTg3NSAxMjM3LjQxNzk2OSA1OTIuNzg5MDYyIEMgMTIzNy40MTc5NjkgNTk4Ljk0MTQwNiAxMjM4LjY0MDYyNSA2MDQuMjY5NTMxIDEyNDEuMDcwMzEyIDYwOC43Njk1MzEgQyAxMjQzLjUgNjEzLjI4MTI1IDEyNDYuODM5ODQ0IDYxNi43MzA0NjkgMTI1MS4xMDE1NjIgNjE5LjEyMTA5NCBDIDEyNTUuMzUxNTYyIDYyMS41MTk1MzEgMTI2MC4yMzA0NjkgNjIyLjcxMDkzOCAxMjY1LjczODI4MSA2MjIuNzEwOTM4IEMgMTI3My4xMDE1NjIgNjIyLjcxMDkzOCAxMjc5LjE3OTY4OCA2MjAuODAwNzgxIDEyODMuOTY4NzUgNjE2Ljk4MDQ2OSBDIDEyODguNzYxNzE5IDYxMy4xNjAxNTYgMTI5MS42OTE0MDYgNjA4LjA1ODU5NCAxMjkyLjc2MTcxOSA2MDEuNjk5MjE5IEwgMTI4Ny43MTg3NSA2MDEuNjk5MjE5IEMgMTI4Ni44NTkzNzUgNjA2LjgzOTg0NCAxMjg0LjQyOTY4OCA2MTAuOTIxODc1IDEyODAuNDI5Njg4IDYxMy45MjE4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMzEyLjc2MTcxOSA1NzcuNzgxMjUgQyAxMzE0Ljk0MTQwNiA1NzQuMTI4OTA2IDEzMTcuNzgxMjUgNTcxLjQyMTg3NSAxMzIxLjI4OTA2MiA1NjkuNjI4OTA2IEMgMTMyNC43ODkwNjIgNTY3Ljg1MTU2MiAxMzI4LjY0ODQzOCA1NjYuOTQ5MjE5IDEzMzIuODcxMDk0IDU2Ni45NDkyMTkgQyAxMzM2Ljk0MTQwNiA1NjYuOTQ5MjE5IDEzNDAuNzMwNDY5IDU2Ny44MjgxMjUgMTM0NC4yMzgyODEgNTY5LjU3ODEyNSBDIDEzNDcuNzM4MjgxIDU3MS4zMjgxMjUgMTM1MC41MzEyNSA1NzQuMDUwNzgxIDEzNTIuNjAxNTYyIDU3Ny43MzA0NjkgQyAxMzU0LjY3MTg3NSA1ODEuNDEwMTU2IDEzNTUuNTcwMzEyIDU4NS45Mjk2ODggMTM1NS4yODEyNSA1OTEuMjg5MDYyIEwgMTMwOS4zNzg5MDYgNTkxLjI4OTA2MiBDIDEzMDkuNDQ5MjE5IDU4NS45Mjk2ODggMTMxMC41NzgxMjUgNTgxLjQyOTY4OCAxMzEyLjc2MTcxOSA1NzcuNzgxMjUgTSAxMzQ3LjQ0OTIxOSA2MTQuMTkxNDA2IEMgMTM0My40NDkyMTkgNjE3LjE2MDE1NiAxMzM4LjUxOTUzMSA2MTguNjQwNjI1IDEzMzIuNjQ4NDM4IDYxOC42NDA2MjUgQyAxMzI4LjUxMTcxOSA2MTguNjQwNjI1IDEzMjQuNjk5MjE5IDYxNy43Njk1MzEgMTMyMS4yMzA0NjkgNjE2LjAxMTcxOSBDIDEzMTcuNzYxNzE5IDYxNC4yNjE3MTkgMTMxNC45NDE0MDYgNjExLjU1MDc4MSAxMzEyLjc2MTcxOSA2MDcuODU5Mzc1IEMgMTMxMC41NzgxMjUgNjA0LjE3OTY4OCAxMzA5LjQ0OTIxOSA1OTkuNjIxMDk0IDEzMDkuMzc4OTA2IDU5NC4xOTE0MDYgTCAxMzU5LjQ2MDkzOCA1OTQuMTkxNDA2IEMgMTM1OS44MjAzMTIgNTkyLjE5MTQwNiAxMzYwIDU5MC4yODkwNjIgMTM2MCA1ODguNSBDIDEzNjAgNTg0LjA3MDMxMiAxMzU4Ljk0OTIxOSA1NzkuOTEwMTU2IDEzNTYuODM5ODQ0IDU3Ni4wMTE3MTkgQyAxMzU0LjczMDQ2OSA1NzIuMTIxMDk0IDEzNTEuNjIxMDk0IDU2OC45Njg3NSAxMzQ3LjUxMTcxOSA1NjYuNTc4MTI1IEMgMTM0My4zOTA2MjUgNTY0LjE3OTY4OCAxMzM4LjUxOTUzMSA1NjIuOTgwNDY5IDEzMzIuODcxMDk0IDU2Mi45ODA0NjkgQyAxMzI3LjM1OTM3NSA1NjIuOTgwNDY5IDEzMjIuNDgwNDY5IDU2NC4xNzk2ODggMTMxOC4yMzA0NjkgNTY2LjU3ODEyNSBDIDEzMTMuOTgwNDY5IDU2OC45Njg3NSAxMzEwLjYyODkwNiA1NzIuNDIxODc1IDEzMDguMTk5MjE5IDU3Ni45MjE4NzUgQyAxMzA1Ljc2OTUzMSA1ODEuNDI5Njg4IDEzMDQuNTU4NTk0IDU4Ni43MTg3NSAxMzA0LjU1ODU5NCA1OTIuNzg5MDYyIEMgMTMwNC41NTg1OTQgNTk4Ljk0MTQwNiAxMzA1Ljc2OTUzMSA2MDQuMjY5NTMxIDEzMDguMTk5MjE5IDYwOC43Njk1MzEgQyAxMzEwLjYyODkwNiA2MTMuMjgxMjUgMTMxMy45ODA0NjkgNjE2LjczMDQ2OSAxMzE4LjIzMDQ2OSA2MTkuMTIxMDk0IEMgMTMyMi40ODA0NjkgNjIxLjUxOTUzMSAxMzI3LjM1OTM3NSA2MjIuNzEwOTM4IDEzMzIuODcxMDk0IDYyMi43MTA5MzggQyAxMzQwLjIzMDQ2OSA2MjIuNzEwOTM4IDEzNDYuMjg5MDYyIDYyMC44MjAzMTIgMTM1MS4wNTA3ODEgNjE3LjAzMTI1IEMgMTM1NS44MDA3ODEgNjEzLjIzODI4MSAxMzU4LjcxMDkzOCA2MDguMjM4MjgxIDEzNTkuNzg5MDYyIDYwMi4wMTk1MzEgTCAxMzU0Ljc1IDYwMi4wMTk1MzEgQyAxMzUzLjg5MDYyNSA2MDcuMTcxODc1IDEzNTEuNDYwOTM4IDYxMS4yMTg3NSAxMzQ3LjQ0OTIxOSA2MTQuMTkxNDA2ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gOTk5LjE3MTg3NSA1MDEuMzA4NTk0IEMgOTgxLjU3ODEyNSA1MDEuMzA4NTk0IDk2Ny4zMjgxMjUgNDg3LjA1ODU5NCA5NjcuMzI4MTI1IDQ2OS40Njg3NSBDIDk2Ny4zMjgxMjUgNDUxLjg5MDYyNSA5ODEuNTc4MTI1IDQzNy42Mjg5MDYgOTk5LjE3MTg3NSA0MzcuNjI4OTA2IEMgMTAxNi43NSA0MzcuNjI4OTA2IDEwMzEuMDExNzE5IDQ1MS44OTA2MjUgMTAzMS4wMTE3MTkgNDY5LjQ2ODc1IEMgMTAzMS4wMTE3MTkgNDg3LjA1ODU5NCAxMDE2Ljc1IDUwMS4zMDg1OTQgOTk5LjE3MTg3NSA1MDEuMzA4NTk0IE0gMTAyNi4zNTE1NjIgNDQyLjAzOTA2MiBDIDEwMTkuMjY5NTMxIDQzNC45NjA5MzggMTAwOS40ODA0NjkgNDMwLjU3ODEyNSA5OTguNjc5Njg4IDQzMC41NzgxMjUgTCA5MjEuMzIwMzEyIDQzMC41NzgxMjUgQyA4OTkuNzEwOTM4IDQzMC41NzgxMjUgODgyLjE5MTQwNiA0NDguMTAxNTYyIDg4Mi4xOTE0MDYgNDY5LjcxMDkzOCBDIDg4Mi4xOTE0MDYgNDgwLjUxOTUzMSA4ODYuNTcwMzEyIDQ5MC4zMDA3ODEgODkzLjY0ODQzOCA0OTcuMzc4OTA2IEMgOTAwLjczMDQ2OSA1MDQuNDYwOTM4IDkxMC41MTk1MzEgNTA4LjgzOTg0NCA5MjEuMzIwMzEyIDUwOC44Mzk4NDQgTCA5OTguNjc5Njg4IDUwOC44Mzk4NDQgQyAxMDIwLjI4OTA2MiA1MDguODM5ODQ0IDEwMzcuODA4NTk0IDQ5MS4zMjAzMTIgMTAzNy44MDg1OTQgNDY5LjcxMDkzOCBDIDEwMzcuODA4NTk0IDQ1OC44OTg0MzggMTAzMy40Mjk2ODggNDQ5LjEyMTA5NCAxMDI2LjM1MTU2MiA0NDIuMDM5MDYyICIvPgogIDwvZz4KPC9zdmc+" alt="Outplan Finance" class="logo-img"/></a>
+</nav>
+
+<section class="hero">
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-inner">
+    <div class="hero-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="52" height="26" class="hero-toggle-mark"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><div class="toggle-divider"></div><span class="hero-toggle-label">Subscribe &amp; switch on your financial plan</span></div>
+    <div class="hero-chip"><span class="hero-chip-dot"></span><span>Subscription Financial Planning for Business Owners</span></div>
+    <h1>Don&#39;t hire a Chartered<br>Financial Planner.<br><em>Subscribe to one.</em></h1>
+    <p class="hero-sub">Your accountant tells you what happened. We tell you what to do next. One fixed monthly fee. Complete financial clarity. Always on your side.</p>
+    <div class="hero-tags">
+      <div class="hero-tag">No Upfront Costs</div>
+      <div class="hero-tag">No Commissions</div>
+      <div class="hero-tag">No Asset Fees</div>
+      <div class="hero-tag">FCA Regulated</div>
+      <div class="hero-tag">Independent</div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn-primary">View Subscription</a>
+      <a href="#advice" class="btn-secondary">Areas of Advice <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="si"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="16" height="8"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg>&nbsp;Chartered Financial Planner</div>
+  <div class="sep"></div>
+  <div class="si"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="16" height="8"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg>&nbsp;FCA Regulated</div>
+  <div class="sep"></div>
+  <div class="si"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="16" height="8"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg>&nbsp;Fixed Monthly Fee</div>
+  <div class="sep"></div>
+  <div class="si"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="16" height="8"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg>&nbsp;Zero Jargon. Clear Impact.</div>
+</div>
+
+
+
+
+<section class="video-intro">
+  <div class="video-intro-inner">
+    <div class="video-intro-hdr">
+      <div class="eyebrow" style="justify-content:center"><div class="eyebrow-bar"></div><span>Meet Alex</span></div>
+      <h2>A different kind of<br>financial planning.</h2>
+      <p>Hear from Alex about why he built Outplan Finance — and what that means for you.</p>
+    </div>
+    <div class="video-device">
+      <div class="video-device-frame">
+        <div class="video-device-screen">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <p>Your introduction video goes here</p>
+            <span>Replace this placeholder with your video embed</span>
+          </div>
+        </div>
+        <div class="video-device-btn"></div>
+        <div class="video-device-camera"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pricing" id="pricing">
+  <div class="pricing-hdr">
+    <div class="eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="26" height="13" class="eyebrow-mark"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><span>Subscription</span></div>
+    <h2>One subscription.<br>Everything you need.</h2>
+    <p>No tiers, no confusion, no compromise. One fixed monthly fee gives you a complete, proactive financial planning service.</p>
+  </div>
+  <div class="pricing-toggle-hero"><div class="ptm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="68" height="34"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><span class="ptm-label">One toggle. Your financial plan, on.</span></div></div>
+  <div class="single-plan">
+    <div class="plan-left">
+      <div class="plan-eyebrow">Outplan Finance Subscription</div>
+      <div class="plan-price"><span class="sym">&#163;</span><span class="num">250</span><span class="per">/ month</span></div>
+      <p class="plan-desc">Traditional advisers are paid more when you invest more. We&#8217;re paid the same either way &#8212; which means our only job is to give you the best possible advice.</p>
+      <a href="#contact" class="plan-cta">Get Started Today</a>
+    </div>
+    <div class="plan-right">
+      <div class="plan-ftitle">What&#39;s Included</div>
+      <ul class="plan-flist">
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Ongoing access to a Chartered Financial Planner</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Comprehensive tax planning and tax allowance utilisation</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Full annual financial plan &amp; strategy document</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Bi-annual strategy meetings with your Chartered Financial Planner</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Investments, pensions, tax, protection &amp; succession planning</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Full personalised regulated recommendations</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Product set-up &amp; ongoing management</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Periodic check-ins with portfolio reviews</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Regulated implementation support</li>
+        <li><span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1,5 4,8 9,2"/></svg></span>Secure client portal</li>
+      </ul>
+    </div>
+  </div>
+  <div class="no-fees">
+    <span class="nf"><span class="nf-dot"></span>No upfront costs</span>
+    <span class="nf"><span class="nf-dot"></span>No commissions</span>
+    <span class="nf"><span class="nf-dot"></span>No asset-based fees</span>
+    <span class="nf"><span class="nf-dot"></span>Cancel anytime</span>
+  </div>
+  <div class="disclaimer">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><path d="M10 9v5M10 7v.5"/></svg>
+    <p>For matters of unique complexity that fall outside the scope of a standard advice engagement, an additional fee may be proposed. Any such fee will always be clearly outlined, agreed in writing, and confirmed before any work commences &#8212; with no obligation to proceed.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="toggle-watermark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="300" height="150"><path fill="#0A0A0A" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg></div>
+  <div class="about-inner">
+    <div class="about-l">
+      <div class="eyebrow"><div class="eyebrow-bar"></div><span>The Challenge</span></div>
+      <h2>Your business needs <em>strategic</em> planning, not guesswork.</h2>
+      <p>Every business owner eventually hits a stage where growth, risk, and future planning become intertwined &#8212; and where the decisions you make today shape the long-term security of both the business and the people behind it.</p>
+      <p>A partner who&#39;s not just looking at the books, but looking ahead &#8212; giving you the clarity, strategy, and confidence to grow securely and sustainably.</p>
+    </div>
+    <div class="about-r">
+      <div class="pillar"><div class="pillar-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div><h3>Optimise Tax Efficiency</h3><p>Structure your finances to minimise tax burden legally &#8212; keeping more of what you earn, year after year.</p></div>
+      <div class="pillar"><div class="pillar-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4m0 4h.01"/></svg></div><h3>Manage Risk &amp; Protect Your People</h3><p>Safeguard yourself, your business, and your employees with the right protection strategies.</p></div>
+      <div class="pillar"><div class="pillar-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14m-4 14-4 4-4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div><h3>Plan for Succession &amp; Exit</h3><p>From business succession to personal legacy &#8212; plan the future of your wealth with clarity and confidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="human" id="human">
+  <div class="human-inner">
+    <div class="human-split">
+      <div class="human-l">
+        <div class="eyebrow"><div class="eyebrow-bar"></div><span>The Human Difference</span></div>
+        <h2>Everyone is pushing<br>you towards AI.<br><em>We&#8217;re not.</em></h2>
+        <p>Across the financial services industry &#8212; and beyond &#8212; companies are replacing human expertise with automated tools, chatbots, and algorithm-driven advice. It is faster, cheaper, and far more scalable for them.</p>
+        <p>But your finances are not a scalable problem. They are personal, nuanced, and constantly evolving alongside your life and your business. The decisions you make about tax, pensions, investments, and succession cannot be reduced to a flowchart.</p>
+        <p>At Outplan Finance, you will always speak to Alex. Not a bot. Not a call handler. Not an automated report engine. A Chartered Financial Planner who knows your situation, understands your goals, and gives you advice you can actually rely on.</p>
+      </div>
+      <div class="human-r">
+        <div class="human-card">
+          <div class="human-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div><strong>A real person, every time</strong><span>Every call, email, and meeting is with your dedicated Chartered Financial Planner &#8212; not a support team or a chatbot.</span></div>
+        </div>
+        <div class="human-card">
+          <div class="human-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><strong>Advice that knows your context</strong><span>We know your business, your family situation, and what keeps you up at night. That context is everything &#8212; and it&#8217;s something no algorithm can replicate.</span></div>
+        </div>
+        <div class="human-card">
+          <div class="human-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><strong>Regulated, accountable, and on your side</strong><span>Automated platforms carry no fiduciary responsibility for your outcome. A Chartered Financial Planner does &#8212; and is regulated by the FCA to act in your best interests, always.</span></div>
+        </div>
+        <div class="human-card">
+          <div class="human-card-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><strong>Proactive, not reactive</strong><span>Your planner reaches out to you &#8212; with timely, relevant input as your circumstances change. Not just when you log in and ask the right question.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="human-banner">
+      <div class="human-banner-l">
+        <h3>Technology should support great advice.<br><em>Not replace the person giving it.</em></h3>
+        <p>We use technology to make our service more efficient, more organised, and more responsive. But the thinking, the strategy, and the relationship will always be human. That is not a limitation &#8212; it is the whole point.</p>
+      </div>
+      <div class="human-banner-r">
+        <div class="human-banner-stat">100%</div>
+        <div class="human-banner-stat-label">Human advice, every single time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div class="founder-top">
+      <div class="founder-l">
+        <div class="eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="26" height="13" class="eyebrow-mark"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><span>Meet the Founder</span></div>
+        <h2>Built by a planner<br>who knew there was<br><em>a better way.</em></h2>
+        <p>Alex Palmer spent a decade working within the traditional financial advice model &#8212; and for much of that time, saw first-hand how the industry&#8217;s fee structures and incentive models worked against the very clients they were meant to serve.</p>
+        <p>In 2026, Alex became a Chartered Financial Planner &#8212; joining an elite group that represents just 15% of financial advisers in the UK &#8212; and launched Outplan Finance with a single conviction: that business owners deserve better access to expert, conflict-free financial planning at a price that makes sense.</p>
+        <div class="founder-stat">
+          <div class="founder-stat-num">15%</div>
+          <div class="founder-stat-txt">of UK financial advisers hold Chartered status</div>
+        </div>
+      </div>
+      <div class="founder-r">
+        <div class="founder-card">
+          <div class="founder-card-name">Alex Palmer</div>
+          <div class="founder-card-title">Chartered Financial Planner &amp; Founder</div>
+          <p class="founder-card-bio">10 years in financial advice. Chartered Financial Planner. Founded Outplan Finance to create a model where the adviser&#8217;s success is measured entirely by client outcomes &#8212; not assets managed, products sold, or fees charged.</p>
+        </div>
+        <div class="founder-chartered">
+          <div class="founder-chartered-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+          <p><strong>Chartered Financial Planner</strong> &#8212; the gold standard in financial planning. Awarded by the Chartered Insurance Institute (CII) to those who demonstrate the highest level of technical knowledge, ethical standards, and ongoing professional development.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="founder-quals">
+      <div class="founder-quals-hdr">
+        <h3>Qualifications</h3>
+        <p>Chartered status is earned, not given. Here are the examinations Alex has passed to reach it.</p>
+      </div>
+      <div class="quals-grid">
+        <div class="qual-group">
+          <div class="qual-group-title">Advanced Diploma &#8212; Level 6</div>
+          <ul class="qual-list">
+            <li><span class="qual-code">AF1</span>Personal Tax and Trust Planning</li>
+            <li><span class="qual-code">AF5</span>Financial Planning Process</li>
+            <li><span class="qual-code">AF6</span>Senior Management and Supervision</li>
+            <li><span class="qual-code">AF7</span>Pension Transfers</li>
+            <li><span class="qual-code">AF8</span>Retirement Income Planning</li>
+          </ul>
+        </div>
+        <div class="qual-group">
+          <div class="qual-group-title">Diploma &#8212; Level 4</div>
+          <ul class="qual-list">
+            <li><span class="qual-code">J10</span>Discretionary Investment Management</li>
+            <li><span class="qual-code">J12</span>Securities Advice and Dealing</li>
+            <li><span class="qual-code">R01</span>Financial Services, Regulation and Ethics</li>
+            <li><span class="qual-code">R02</span>Investment Principles and Risk</li>
+            <li><span class="qual-code">R03</span>Personal Taxation</li>
+            <li><span class="qual-code">R04</span>Pensions and Retirement Planning</li>
+            <li><span class="qual-code">R05</span>Financial Protection</li>
+            <li><span class="qual-code">R06</span>Financial Planning Practice</li>
+            <li><span class="qual-code">R08</span>Pensions Update</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bsss" id="why-alex">
+  <div class="bsss-inner">
+    <div class="bsss-hdr">
+      <div class="eyebrow"><div class="eyebrow-bar"></div><span>Why Alex?</span></div>
+      <h2>Book smart.<br><em>Street smart.</em></h2>
+      <p class="bsss-sub">The qualifications to advise you. The background to truly understand you.</p>
+    </div>
+    <div class="bsss-body">
+      <div class="bsss-l">
+        <p>Alex didn&#8217;t come to understand business owners through a textbook. He grew up around them.</p>
+        <p>His father built Palmer&#8217;s Pantry from the ground up &#8212; and Alex watched first-hand what it takes to run a business: the long hours, the financial pressure, and the pride that comes with building something of your own.</p>
+        <p>His mother and grandfather co-founded Griffiths Signs &#8212; a business that has been trading successfully for over 30 years, employing more than ten members of staff, and continues to operate today. A testament to what dedication and smart decision-making can build over a lifetime.</p>
+        <p>His closest friends have gone on to found dental practices, online pharmacies, hospitality businesses, and financial advice firms. He has been close to people at every stage of the business journey &#8212; from the nervous early days to the complexity of growth and exit.</p>
+        <p>That background shapes every conversation Alex has with a client. He doesn&#8217;t just understand the numbers. He understands what those numbers mean to the person behind the business.</p>
+      </div>
+      <div class="bsss-r">
+        <div class="bsss-card bsss-card--book">
+          <div class="bsss-card-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div class="bsss-card-label">Book Smart</div>
+          <h3>Chartered Financial Planner</h3>
+          <p>Level 6 Advanced Diploma. One of only 15% of UK financial advisers to hold Chartered status. The highest standard of technical knowledge, ethics, and professional development in financial planning.</p>
+          <div class="bsss-tags">
+            <span>AF1</span><span>AF5</span><span>AF6</span><span>AF7</span><span>AF8</span><span>10+ Years Experience</span>
+          </div>
+        </div>
+        <div class="bsss-card bsss-card--street">
+          <div class="bsss-card-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="bsss-card-label">Street Smart</div>
+          <h3>Raised Around Business Owners</h3>
+          <p>Grew up watching family businesses built from scratch. Close friends who have founded dental practices, online pharmacies, hospitality businesses, and advice firms. A genuine, lived understanding of what it means to run a business.</p>
+          <div class="bsss-tags">
+            <span>Palmer&#8217;s Pantry</span><span>Griffiths Signs</span><span>30+ Years Family Business</span><span>Sole Traders</span><span>Partnerships</span><span>Limited Companies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advice" id="advice">
+  <div class="advice-hdr">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span>Areas of Advice</span></div>
+    <h2>Chartered Financial Planner on Subscription.<br><em>Strategic Support on Demand.</em></h2>
+    <p>Your dedicated planner gets into the details that genuinely move the needle &#8212; strengthening your financial structure, improving tax efficiency, protecting the business and its owners, and ensuring every decision aligns with your long-term goals.</p>
+  </div>
+  <div class="advice-grid">
+    <div class="acard">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v1m0 8v1m-3.5-5h7m-5-2.5c0-1.1.9-2 2-2h1a2 2 0 0 1 0 4h-1a2 2 0 0 0 0 4h1a2 2 0 0 0 2-2"/></svg></span>
+      <h3>Profit Extraction</h3>
+      <ul>
+        <li>Tax efficient strategies</li>
+        <li>Salary, dividends, pensions &amp; investments</li>
+        <li>Timing &amp; planning</li>
+        <li>Structuring for long term benefit</li>
+        <li>Balancing business &amp; personal needs</li>
+      </ul>
+    </div>
+    <div class="acard">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-6 7 6v12M9 21v-6h6v6"/></svg></span>
+      <h3>Retirement Planning</h3>
+      <ul>
+        <li>Employer contributions</li>
+        <li>Annual allowance management</li>
+        <li>Pension fund management</li>
+        <li>Retirement strategy and forecasting</li>
+        <li>Cash flow modelling tools</li>
+      </ul>
+    </div>
+    <div class="acard">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+      <h3>Tax Efficient Investment Planning</h3>
+      <ul>
+        <li>ISAs (Individual Savings Accounts)</li>
+        <li>EIS (Enterprise Investment Schemes)</li>
+        <li>VCTs (Venture Capital Trusts)</li>
+        <li>Portfolio construction &amp; management</li>
+        <li>Goal-based planning</li>
+      </ul>
+    </div>
+    <div class="acard">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <h3>Protection Planning</h3>
+      <ul>
+        <li>Key Person Insurance</li>
+        <li>Shareholder Protection</li>
+        <li>Business Loan Protection</li>
+        <li>Relevant Life Protection</li>
+        <li>Executive Income Protection</li>
+      </ul>
+    </div>
+    <div class="acard">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8l4 4-4 4m4-4H8"/></svg></span>
+      <h3>Exit Strategy &amp; Succession Planning</h3>
+      <ul>
+        <li>Strategic exit planning</li>
+        <li>Tax-efficient structuring</li>
+        <li>Succession planning</li>
+        <li>Valuation &amp; timing advice</li>
+        <li>Integration with personal financial goals</li>
+      </ul>
+    </div>
+    <div class="acard hl">
+      <span class="acard-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <h3>Still Have Questions?</h3>
+      <p class="acard-cta-p">Get the clarity you need &#8212; with expert answers from Outplan Finance&#39;s founder.</p>
+      <a href="/cdn-cgi/l/email-protection#b1d9d4dddddef1dec4c5c1ddd0dfd7d8dfd0dfd2d49fd2de9fc4da" class="btn-primary" style="display:block;text-align:center;font-size:.78rem;padding:.75rem 1.4rem;">Subscribe Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="onboarding">
+  <div class="timeline-hdr">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span>Your Journey</span></div>
+    <h2>From day one to ongoing strategy.</h2>
+    <p>No ambiguity. No wondering what happens next. A proven process designed to deliver clarity, action, and continuous progress.</p>
+  </div>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-num">1</div>
+      <div class="tl-content">
+        <div class="tl-step">Step One</div>
+        <h3>Subscribe</h3>
+        <p>Choose your plan and get started immediately. No upfront fees, no lengthy paperwork. You&#39;ll hear from your Chartered Financial Planner within one working day.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">2</div>
+      <div class="tl-content">
+        <div class="tl-step">Step Two</div>
+        <h3>Strategy Meeting</h3>
+        <p>A comprehensive remote meeting covering your personal finances, business finances, goals, objectives, attitude to risk, capacity for loss, vulnerabilities, investments, pensions, protection and long-term vision.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">3</div>
+      <div class="tl-content">
+        <div class="tl-step">Step Three</div>
+        <h3>Your Financial Plan</h3>
+        <p>A clear, personalised financial plan &#8212; your strategic roadmap, written in plain English with priority actions ranked by impact.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">4</div>
+      <div class="tl-content">
+        <div class="tl-step">Step Four</div>
+        <h3>Implementation</h3>
+        <p>We don&#39;t just advise &#8212; we act. Your planner supports implementing your financial plan end to end, so nothing falls through the cracks.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">5</div>
+      <div class="tl-content">
+        <div class="tl-step">Step Five</div>
+        <h3>Bi-Annual Strategy Meeting</h3>
+        <p>Every six months we review progress, respond to changes, and keep your strategy moving in the right direction.</p>
+      </div>
+    </div>
+    <div class="tl-item special">
+      <div class="tl-num">&#8635;</div>
+      <div class="tl-content">
+        <div class="tl-step">Ongoing</div>
+        <h3>The Cycle Continues</h3>
+        <p>Financial planning isn&#39;t a one-off event. Steps 2&#8211;5 repeat continuously, ensuring your plan reflects where you are and where you&#39;re headed. It must also be adapted to the constantly changing tax rules and regulations.</p>
+        <div class="tl-repeat">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 4h10a4 4 0 0 1 0 8H4"/><path d="M4 9l-3 3 3 3"/></svg>
+          Repeats from Step 2
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="charging" id="charging">
+  <div class="charging-hdr">
+    <div class="eyebrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="26" height="13" class="eyebrow-mark"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><span>A New Standard</span></div>
+    <h2>We charge less.<br><em>And deliver more.</em></h2>
+    <p>Most financial advisers charge too much, bury their fees in small print, and make it hard to understand what you&#8217;re really paying for. We&#8217;ve built something fundamentally different &#8212; straightforward, transparent, and priced in a way that makes sense from day one.</p>
+  </div>
+
+  <!-- REAL COST REALITY CHECK -->
+  <div class="cost-reality">
+    <div class="cost-reality-inner">
+      <div class="cr-left">
+        <div class="eyebrow"><div class="eyebrow-bar"></div><span>The Real Cost of Traditional Advice</span></div>
+        <h3>What a typical adviser actually charges on a &#163;300,000 portfolio</h3>
+        <p>These numbers are industry standard &#8212; and most clients never see them laid out this clearly.</p>
+        <div class="cr-fees">
+          <div class="cr-fee bad">
+            <div class="cr-fee-label">Initial advice fee</div>
+            <div class="cr-fee-typical"><span>Typical adviser:</span> 2% = <strong>&#163;6,000</strong></div>
+            <div class="cr-fee-us"><span>Outplan:</span> <strong class="green">&#163;0</strong></div>
+          </div>
+          <div class="cr-fee bad">
+            <div class="cr-fee-label">Implementation fee</div>
+            <div class="cr-fee-typical"><span>Typical adviser:</span> 1% = <strong>&#163;3,000</strong></div>
+            <div class="cr-fee-us"><span>Outplan:</span> <strong class="green">&#163;0</strong></div>
+          </div>
+          <div class="cr-fee bad">
+            <div class="cr-fee-label">Ongoing annual fee</div>
+            <div class="cr-fee-typical"><span>Typical adviser:</span> up to 1%/yr = <strong>&#163;3,000/yr</strong></div>
+            <div class="cr-fee-us"><span>Outplan:</span> <strong class="green">&#163;3,000/yr. Fixed. Always.</strong></div>
+          </div>
+        </div>
+        <div class="cr-total">
+          <div class="cr-total-label">Year one total cost &#8212; traditional adviser</div>
+          <div class="cr-total-num">&#163;12,000</div>
+          <div class="cr-total-sub">Before a single investment return has been earned.</div>
+        </div>
+      </div>
+      <div class="cr-right">
+        <div class="cr-callout">
+          <div class="cr-callout-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h4>The compounding fee problem</h4>
+          <p>A 1% annual fee on a &#163;300,000 portfolio is &#163;3,000 today. But as your wealth grows &#8212; which is the whole point &#8212; so does their fee. On a &#163;600,000 portfolio, that&#8217;s &#163;6,000 per year, automatically, without any additional work being done.</p>
+          <p>At Outplan, your success is entirely yours. Our fee never scales with your wealth. Growth benefits you &#8212; not us.</p>
+        </div>
+        <div class="cr-callout green-callout">
+          <div class="cr-callout-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h4>What the research says</h4>
+          <p>According to Royal London, clients who receive financial advice build an average of <strong>&#163;47,000 more in assets</strong> than those who don&#8217;t. Vanguard&#8217;s research suggests expert financial advice can add around <strong>3% per year</strong> in net value through smarter decisions, tax efficiency, and behavioural coaching.</p>
+          <p>That value shouldn&#8217;t be eaten up by the adviser&#8217;s fee structure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VS COMPARISON -->
+  <div class="charging-hdr" style="margin-top:5rem;margin-bottom:3rem">
+    <h3 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:400;letter-spacing:-.03em;color:var(--black);margin-bottom:.8rem">The model that no longer serves clients &#8212; versus the one that does.</h3>
+    <p style="font-size:.9rem;color:var(--grey-600);font-weight:300;line-height:1.75">We&#8217;re not here to sell you products or push investments you don&#8217;t need. We have no preferred products, no commissions, and no incentive other than your long-term success.</p>
+  </div>
+
+  <div class="charge-vs">
+    <div class="charge-side old">
+      <div class="charge-head">
+        <div class="charge-lbl">The Old Model</div>
+        <h3>Asset-Based &amp; Initial Fee Charging</h3>
+        <p>Built around adviser revenue &#8212; not client outcomes.</p>
+      </div>
+      <div class="charge-items">
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="ci-txt"><strong>Pay before advice even starts</strong><span>Initial fees of 1&#8211;2% mean you&#8217;re paying thousands before a single recommendation is made or a single product arranged.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="ci-txt"><strong>Your growth funds their fee</strong><span>Percentage-based ongoing fees mean the more your wealth grows, the more they earn &#8212; automatically, with no extra work required on their part.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><div class="ci-txt"><strong>Incentivised to sell, not advise</strong><span>When income depends on products placed and assets managed, the advice you receive can never be truly independent &#8212; however well-intentioned.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><div class="ci-txt"><strong>Small print, big surprises</strong><span>Platform fees, fund charges, and adviser percentages stack up silently. Most clients have no idea what they truly pay each year in total.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/></svg></div><div class="ci-txt"><strong>Reactive by design</strong><span>The traditional model is built around product transactions, not ongoing strategy. Proactive, business-owner-focused planning isn&#8217;t part of the structure.</span></div></div>
+      </div>
+      <div class="charge-foot"><div class="charge-total">Year one cost on &#163;300k &#8212; typical adviser<strong>&#163;9,000&#8211;&#163;12,750+</strong></div></div>
+    </div>
+    <div class="vs-div">
+      <div class="vs-ln"></div>
+      <div class="vs-circle">VS</div>
+      <div class="vs-ln"></div>
+    </div>
+    <div class="charge-side new">
+      <div class="charge-head">
+        <div class="charge-lbl">The Outplan Model</div>
+        <h3>Fixed-Fee Subscription. Total Clarity.</h3>
+        <p>Straightforward. Transparent. Reasonable.</p>
+      </div>
+      <div class="charge-items">
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="ci-txt"><strong>Zero upfront costs. Ever.</strong><span>No initial advice fee. No implementation fee. No set-up costs. You pay nothing until your subscription starts &#8212; and only when it starts making a real difference.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="ci-txt"><strong>&#163;250/month. Fixed. Always.</strong><span>One clear monthly fee that never changes based on your portfolio size. Whether you have &#163;100k or &#163;2m invested, the fee stays the same.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="ci-txt"><strong>Our success depends on yours</strong><span>We don&#8217;t take commissions. We don&#8217;t have preferred products. Our only incentive is to help you succeed &#8212; because our reputation depends entirely on your outcomes.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="ci-txt"><strong>No sales. No surprises. Just clarity.</strong><span>Everything is explained upfront. Any third-party costs are fully disclosed. You will never be hit with unexpected charges, add-ons, or hidden fees.</span></div></div>
+        <div class="charge-item"><div class="ci-ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="ci-txt"><strong>Proactive from day one</strong><span>You gain a dedicated Chartered Financial Planner with one clear mission: helping you make smarter decisions, build lasting wealth, and feel in control of your financial future.</span></div></div>
+      </div>
+      <div class="charge-foot"><div class="charge-total">Outplan &#8212; regardless of portfolio size<strong>&#163;3,000/yr. Fixed. Always.</strong></div></div>
+    </div>
+  </div>
+
+  <div class="charge-insight">
+    <div class="ci-insight-ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+    <div class="ci-insight-txt">
+      <h4>&#8220;Financial advice should be clear, fair, and built around you.&#8221;</h4>
+      <p>We&#8217;ve removed the upfront costs, stripped out the small print, and kept our fees simple, transparent, and good value. <strong>No sales pressure. No commissions. No hidden agenda.</strong> Just expert, Chartered-level advice focused entirely on your goals &#8212; and a fee structure that was always meant to serve you, not the industry.</p>
+    </div>
+  </div>
+</section>
+
+<section class="compare" id="compare">
+  <div class="compare-hdr">
+    <div class="eyebrow"><div class="eyebrow-bar"></div><span>Why Outplan</span></div>
+    <h2>A genuinely different<br>way to access expertise.</h2>
+  </div>
+  <div class="ctable">
+    <div class="crow ch"><div class="cc">Feature</div><div class="cc hl">Outplan</div><div class="cc">Full-Time CFP</div><div class="cc">Traditional IFA</div></div>
+    <div class="crow"><div class="cc">Fixed monthly fee</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="no">&#10007;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">No asset-based fees</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="yes">&#10003;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">No commissions</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="yes">&#10003;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">Chartered Financial Planner</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="part">&#126;</span></div><div class="cc"><span class="part">&#126;</span></div></div>
+    <div class="crow"><div class="cc">Business-owner focused</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="part">&#126;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">No upfront costs</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="no">&#10007;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">Proactive (not reactive)</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="part">&#126;</span></div><div class="cc"><span class="no">&#10007;</span></div></div>
+    <div class="crow"><div class="cc">Regulated implementation</div><div class="cc hl"><span class="yes">&#10003;</span></div><div class="cc"><span class="yes">&#10003;</span></div><div class="cc"><span class="yes">&#10003;</span></div></div>
+  </div>
+</section>
+
+<section class="ctasec" id="contact">
+  <div class="cta-inner cta-inner-full">
+    <div class="cta-l">
+      <div class="cta-toggle-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="42" height="21"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg><span class="cta-toggle-txt">Switch on your financial plan</span></div>
+      <h2>Ready to stop guessing<br>and start <em>planning</em>?</h2>
+      <p>Your business deserves a partner who&#39;s not just looking at the books, but looking ahead &#8212; giving you the clarity, strategy, and confidence to grow securely and sustainably.</p>
+      <div class="cta-reassure">
+        <div class="ccard"><div class="ccard-ic"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><strong>No long-term lock-in</strong><span>Cancel anytime &#8212; no exit fees.</span></div></div>
+        <div class="ccard"><div class="ccard-ic"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div><div><strong>Chartered expertise</strong><span>Every plan delivered by a Chartered Financial Planner.</span></div></div>
+        <div class="ccard"><div class="ccard-ic"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><strong>Start this month</strong><span>You&#39;ll hear from Alex within one working day.</span></div></div>
+      </div>
+    </div>
+    <div class="cta-r">
+      <div class="subscribe-form" id="subscribe-form">
+        <div class="sf-header">
+          <div class="sf-price">£250<span class="sf-per">/mo</span></div>
+          <p>Fill in your details and Alex will be in touch within one working day.</p>
+        </div>
+        <div class="sf-fields">
+          <div class="sf-field">
+            <label>Full Name</label>
+            <input type="text" id="sf-name" placeholder="Your full name" />
+          </div>
+          <div class="sf-field">
+            <label>Email Address</label>
+            <input type="email" id="sf-email" placeholder="your@email.com" />
+          </div>
+          <div class="sf-field">
+            <label>Phone Number</label>
+            <input type="tel" id="sf-phone" placeholder="07700 000000" />
+          </div>
+          <div class="sf-field">
+            <label>Business Name</label>
+            <input type="text" id="sf-business" placeholder="Your business name" />
+          </div>
+          <div class="sf-field">
+            <label>Anything you&#39;d like us to know? <span class="sf-optional">(optional)</span></label>
+            <textarea id="sf-message" placeholder="Tell us a little about your situation..." rows="3"></textarea>
+          </div>
+        </div>
+        <button class="sf-submit" onclick="submitForm()">Subscribe Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        <p class="sf-small">By submitting this form you agree to be contacted by Outplan Finance. We will never share your details with third parties.</p>
+      </div>
+      <div class="sf-success" id="sf-success" style="display:none">
+        <div class="sf-success-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></div>
+        <h3>Thank you — we&#39;ll be in touch.</h3>
+        <p>Alex will contact you within one working day to get things started.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cdn" id="cdn">
+  <div class="cdn-inner">
+    <div class="cdn-hdr">
+      <div class="eyebrow"><div class="eyebrow-bar"></div><span>The Cost of Doing Nothing</span></div>
+      <h2>Every tax year that passes<br>without a plan is money<br><em>you can&#8217;t get back.</em></h2>
+      <p>Inaction isn&#8217;t neutral. It&#8217;s a decision — and it has a price.</p>
+    </div>
+    <div class="cdn-cards">
+      <div class="cdn-card">
+        <div class="cdn-card-top">
+          <div class="cdn-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="cdn-card-eyebrow">Pension Allowance</div>
+        </div>
+        <h3>Up to £180,000 of tax-efficient space — most business owners never use it.</h3>
+        <p>The annual pension allowance is £60,000. Miss this year and it&#8217;s gone. But with carry forward, you can reclaim up to three years of unused allowances — contributing up to £180,000 in a single payment.</p>
+        <p>Employer pension contributions made through your limited company are fully deductible against corporation tax. That means every pound you put into your pension also reduces your company&#8217;s tax bill.</p>
+        <div class="cdn-pill">£60,000 lost per year unplanned</div>
+      </div>
+      <div class="cdn-card">
+        <div class="cdn-card-top">
+          <div class="cdn-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+          </div>
+          <div class="cdn-card-eyebrow">Profit Extraction</div>
+        </div>
+        <h3>Taking a salary and dividends without a plan is one of the most costly mistakes a business owner makes.</h3>
+        <p>Most directors default to a salary and take dividends without ever questioning whether the split is right, the timing is optimal, or whether there are more tax-efficient ways to extract value from their company.</p>
+        <p>Getting this right means understanding your personal allowance, your dividend allowance, your marginal tax rate, and how your extraction strategy interacts with your pension contributions, your spouse&#8217;s position, and your company&#8217;s corporation tax liability. Done well, it can save thousands of pounds each year &#8212; not through avoidance, but simply by using the allowances and structures that already exist.</p>
+        <div class="cdn-pill">Thousands lost each year without the right plan</div>
+      </div>
+      <div class="cdn-card">
+        <div class="cdn-card-top">
+          <div class="cdn-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="cdn-card-eyebrow">ISA Allowance</div>
+        </div>
+        <h3>£20,000 of tax-free investment space disappears every 5th April.</h3>
+        <p>Your ISA allowance is £20,000 per person, per year. Once the tax year ends, that allowance is gone permanently — it cannot be carried forward.</p>
+        <p>A couple could be sheltering £40,000 a year from tax on growth and income. The longer this goes unused, the greater the compounding opportunity you&#8217;re leaving on the table.</p>
+        <div class="cdn-pill">£20,000 per person lost every April</div>
+      </div>
+    </div>
+    <div class="cdn-banner">
+      <p>These aren&#8217;t complicated problems. They&#8217;re missed opportunities. And the longer they go unaddressed, the more they cost.</p>
+      <a href="#pricing" class="btn-primary">Start your financial plan today</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-hdr">
+      <div class="eyebrow"><div class="eyebrow-bar"></div><span>Client Reviews</span></div>
+      <h2>Trusted by the people<br>who matter most.</h2>
+      <div class="testimonials-meta">
+        <div class="tm-score">
+          <span class="tm-num">4.9</span>
+          <div class="tm-stars">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          </div>
+          <span class="tm-label">123 verified reviews on VouchedFor</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;I thought Alex was knowledgeable, professional and reliable. Very prompt attending meetings with us and his attitude was one of service, rather than sales.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;Alex gave me lots of ideas, there was no pressure and he sorted out what were the best options. He certainly helped me and left me feeling confident in the knowledge my money was safe.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;Alex has fulfilled my expectations and beyond, being very responsive to my queries and explaining matters very clearly.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;Alex reviewed all our pensions patiently and diligently. Alex advised us to merge and move some but leave others to sit in existing funds. A truly nice person.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;I am now 65, retired and glad I spoke to Alex at an early stage. I have always found him to be friendly, helpful and supportive. I would definitely recommend his services.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 10.8l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg>
+        </div>
+        <blockquote>&#8220;Alex is wonderful. Very quick to reply. Very helpful and kind.&#8221;</blockquote>
+        <div class="tcard-author">
+          <div class="tcard-initials">VF</div>
+          <div>
+            <div class="tcard-name">Verified Client</div>
+            <div class="tcard-source">VouchedFor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-cta">
+      <a href="https://www.vouchedfor.co.uk/financial-advisor-ifa/newport/028637-alex-palmer" target="_blank" rel="noopener" class="btn-ghost-dark">Read all 123 reviews on VouchedFor <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-hdr">
+      <div class="eyebrow"><div class="eyebrow-bar"></div><span>FAQ</span></div>
+      <h2>Questions, answered.</h2>
+      <p>Everything you need to know about Outplan Finance and how we work.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Is Outplan Finance regulated?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Yes. Outplan Finance is authorised and regulated by the Financial Conduct Authority (FCA).</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How is this different from my accountant?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Your accountant records what has happened financially and ensures you&#8217;re compliant. Outplan Finance looks forward &#8212; building a proactive strategy around tax planning, investments, pensions, protection and succession to grow and protect your wealth.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What does the monthly subscription include?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Everything &#8212; your annual financial plan, bi-annual strategy meetings, investment and pension management, tax planning, protection, and ongoing access to your Chartered Financial Planner. One fee, no hidden extras.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Can I cancel at any time?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Yes. There&#8217;s no long-term contract or exit fee. You subscribe monthly and can cancel at any time.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you manage my investments directly?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Outplan Finance acts as an intermediary, finding the most suitable funds or fund managers for you to invest in. All investment recommendations are made in line with your attitude to risk, capacity for loss, and ethical preferences.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What type of business owner is Outplan Finance for?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Any business owner, at any stage of their business lifetime. There is no minimum turnover and no minimum portfolio size &#8212; whether you&#8217;re just starting out or approaching an exit, we can help.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Do you work with people who don&#8217;t own a business?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Yes. While our expertise is particularly well-suited to business owners, we also work with professionals, families, and anyone seeking high-quality financial planning on a subscription basis. If you&#8217;re looking for clear, proactive, and expert financial guidance &#8212; we can help.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>How quickly can I get started?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Subscribe today and you&#8217;ll hear from your Chartered Financial Planner within one working day.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>What&#8217;s the additional fee for complex cases?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>For matters outside a standard engagement, an additional fee may be proposed &#8212; always agreed in writing before any work begins, with no obligation to proceed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <a href="#" class="fb-logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjU0NSA0MjUgODMwIDI0MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSI2NCI+CiAgPGcgZmlsbD0iY3VycmVudENvbG9yIj4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgICBkPSJNIDYwOS4yMTg3NSA2MDcuMDU4NTk0IEMgNjA3LjAxMTcxOSA2MTAuOTIxODc1IDYwNC4wODk4NDQgNjEzLjc4MTI1IDYwMC40ODA0NjkgNjE1LjY0MDYyNSBDIDU5Ni44NzEwOTQgNjE3LjUgNTkyLjk2MDkzOCA2MTguNDI5Njg4IDU4OC43MzgyODEgNjE4LjQyOTY4OCBDIDU4NC41MTk1MzEgNjE4LjQyOTY4OCA1ODAuNjA5Mzc1IDYxNy41IDU3NyA2MTUuNjQwNjI1IEMgNTczLjM5MDYyNSA2MTMuNzgxMjUgNTcwLjQ2ODc1IDYxMC45MjE4NzUgNTY4LjI2MTcxOSA2MDcuMDU4NTk0IEMgNTY2LjAzOTA2MiA2MDMuMTk5MjE5IDU2NC45Mjk2ODggNTk4LjQ0MTQwNiA1NjQuOTI5Njg4IDU5Mi43ODkwNjIgQyA1NjQuOTI5Njg4IDU4Ny4xNDg0MzggNTY2LjAzOTA2MiA1ODIuNDEwMTU2IDU2OC4yNjE3MTkgNTc4LjU4OTg0NCBDIDU3MC40Njg3NSA1NzQuNzYxNzE5IDU3My4zOTA2MjUgNTcxLjkyMTg3NSA1NzcgNTcwLjA1ODU5NCBDIDU4MC42MDkzNzUgNTY4LjE5OTIxOSA1ODQuNTE5NTMxIDU2Ny4yNjk1MzEgNTg4LjczODI4MSA1NjcuMjY5NTMxIEMgNTkzLjAzMTI1IDU2Ny4yNjk1MzEgNTk2Ljk4MDQ2OSA1NjguMTk5MjE5IDYwMC41ODk4NDQgNTcwLjA1ODU5NCBDIDYwNC4xOTkyMTkgNTcxLjkyMTg3NSA2MDcuMTAxNTYyIDU3NC43NjE3MTkgNjA5LjI4MTI1IDU3OC41ODk4NDQgQyA2MTEuNDYwOTM4IDU4Mi40MTAxNTYgNjEyLjU1MDc4MSA1ODcuMTQ4NDM4IDYxMi41NTA3ODEgNTkyLjc4OTA2MiBDIDYxMi41NTA3ODEgNTk4LjQ0MTQwNiA2MTEuNDQxNDA2IDYwMy4xOTkyMTkgNjA5LjIxODc1IDYwNy4wNTg1OTQgTSA2MTMuNzgxMjUgNTc2LjkyMTg3NSBDIDYxMS4zMDg1OTQgNTcyLjQyMTg3NSA2MDcuODk4NDM4IDU2OC45Njg3NSA2MDMuNTM5MDYyIDU2Ni41NzgxMjUgQyA1OTkuMTc5Njg4IDU2NC4xNzk2ODggNTk0LjIzODI4MSA1NjIuOTgwNDY5IDU4OC43MzgyODEgNTYyLjk4MDQ2OSBDIDU4My4zMDg1OTQgNTYyLjk4MDQ2OSA1NzguNDEwMTU2IDU2NC4xNzk2ODggNTc0LjA1MDc4MSA1NjYuNTc4MTI1IEMgNTY5LjY5MTQwNiA1NjguOTY4NzUgNTY2LjI2MTcxOSA1NzIuNDIxODc1IDU2My43NSA1NzYuOTIxODc1IEMgNTYxLjI1IDU4MS40Mjk2ODggNTYwIDU4Ni43MTg3NSA1NjAgNTkyLjc4OTA2MiBDIDU2MCA1OTguODcxMDk0IDU2MS4yNSA2MDQuMTc5Njg4IDU2My43NSA2MDguNzE4NzUgQyA1NjYuMjYxNzE5IDYxMy4yNjE3MTkgNTY5LjY5MTQwNiA2MTYuNzMwNDY5IDU3NC4wNTA3ODEgNjE5LjEyMTA5NCBDIDU3OC40MTAxNTYgNjIxLjUxOTUzMSA1ODMuMzA4NTk0IDYyMi43MTA5MzggNTg4LjczODI4MSA2MjIuNzEwOTM4IEMgNTk0LjIzODI4MSA2MjIuNzEwOTM4IDU5OS4xNzk2ODggNjIxLjUxOTUzMSA2MDMuNTM5MDYyIDYxOS4xMjEwOTQgQyA2MDcuODk4NDM4IDYxNi43MzA0NjkgNjExLjMwODU5NCA2MTMuMjgxMjUgNjEzLjc4MTI1IDYwOC43Njk1MzEgQyA2MTYuMjUgNjA0LjI2OTUzMSA2MTcuNDgwNDY5IDU5OC45NDE0MDYgNjE3LjQ4MDQ2OSA1OTIuNzg5MDYyIEMgNjE3LjQ4MDQ2OSA1ODYuNzE4NzUgNjE2LjI1IDU4MS40Mjk2ODggNjEzLjc4MTI1IDU3Ni45MjE4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA2NzEuOTQ5MjE5IDU2My43MzA0NjkgTCA2NzEuOTQ5MjE5IDU5NC42MjEwOTQgQyA2NzEuOTQ5MjE5IDYwMi42Mjg5MDYgNjcwLjA1ODU5NCA2MDguNjkxNDA2IDY2Ni4yNjk1MzEgNjEyLjgwMDc4MSBDIDY2Mi40ODA0NjkgNjE2LjkxMDE1NiA2NTcuMzk4NDM4IDYxOC45NjA5MzggNjUxLjAzOTA2MiA2MTguOTYwOTM4IEMgNjQ0Ljk2MDkzOCA2MTguOTYwOTM4IDY0MC4xNzE4NzUgNjE3LjEyMTA5NCA2MzYuNjcxODc1IDYxMy40NDE0MDYgQyA2MzMuMTcxODc1IDYwOS43NjE3MTkgNjMxLjQxMDE1NiA2MDQuNDQ5MjE5IDYzMS40MTAxNTYgNTk3LjUxMTcxOSBMIDYzMS40MTAxNTYgNTYzLjczMDQ2OSBMIDYyNi42OTkyMTkgNTYzLjczMDQ2OSBMIDYyNi42OTkyMTkgNTk3LjYyMTA5NCBDIDYyNi42OTkyMTkgNjA2LjA1ODU5NCA2MjguODM5ODQ0IDYxMi40MjE4NzUgNjMzLjEyODkwNiA2MTYuNzEwOTM4IEMgNjM3LjQyMTg3NSA2MjEgNjQyLjk2MDkzOCA2MjMuMTQwNjI1IDY0OS43NSA2MjMuMTQwNjI1IEMgNjU1LjAzOTA2MiA2MjMuMTQwNjI1IDY1OS43MTA5MzggNjIxLjc1IDY2My43NSA2MTguOTYwOTM4IEMgNjY3Ljc4OTA2MiA2MTYuMTcxODc1IDY3MC41MTk1MzEgNjEyLjEwMTU2MiA2NzEuOTQ5MjE5IDYwNi43MzgyODEgTCA2NzEuOTQ5MjE5IDYyMS45Njg3NSBMIDY3Ni44OTA2MjUgNjIxLjk2ODc1IEwgNjc2Ljg5MDYyNSA1NjMuNzMwNDY5IFogTSA2NzEuOTQ5MjE5IDU2My43MzA0NjkgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA3MTQuNjIxMDk0IDU2OC4xMjg5MDYgTCA3MTQuNjIxMDk0IDU2My43MzA0NjkgTCA2OTcuMzUxNTYyIDU2My43MzA0NjkgTCA2OTcuMzUxNTYyIDU0OC45Mjk2ODggTCA2OTIuNTE5NTMxIDU0OC45Mjk2ODggTCA2OTIuNTE5NTMxIDU2My43MzA0NjkgTCA2ODMuMzAwNzgxIDU2My43MzA0NjkgTCA2ODMuMzAwNzgxIDU2OC4xMjg5MDYgTCA2OTIuNTE5NTMxIDU2OC4xMjg5MDYgTCA2OTIuNTE5NTMxIDYwNS41NTg1OTQgQyA2OTIuNTE5NTMxIDYxMS40ODgyODEgNjkzLjc2MTcxOSA2MTUuNzEwOTM4IDY5Ni4yMTg3NSA2MTguMjEwOTM4IEMgNjk4LjY5MTQwNiA2MjAuNzEwOTM4IDcwMi42MDkzNzUgNjIxLjk2ODc1IDcwNy45Njg3NSA2MjEuOTY4NzUgTCA3MTQuNjIxMDk0IDYyMS45Njg3NSBMIDcxNC42MjEwOTQgNjE3LjU3MDMxMiBMIDcwOC41IDYxNy41NzAzMTIgQyA3MDQuMzU5Mzc1IDYxNy41NzAzMTIgNzAxLjQ2MDkzOCA2MTYuNzMwNDY5IDY5OS44MjAzMTIgNjE1LjA1MDc4MSBDIDY5OC4xNzE4NzUgNjEzLjM3MTA5NCA2OTcuMzUxNTYyIDYxMC4yMTA5MzggNjk3LjM1MTU2MiA2MDUuNTU4NTk0IEwgNjk3LjM1MTU2MiA1NjguMTI4OTA2IFogTSA3MTQuNjIxMDk0IDU2OC4xMjg5MDYgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA3NzMuNjQ4NDM4IDYxMS41NTg1OTQgQyA3NjkuMzIwMzEyIDYxNi4xNDA2MjUgNzYzLjUxOTUzMSA2MTguNDI5Njg4IDc1Ni4yMTg3NSA2MTguNDI5Njg4IEMgNzUxLjY0ODQzOCA2MTguNDI5Njg4IDc0Ny41MzkwNjIgNjE3LjM3MTA5NCA3NDMuODkwNjI1IDYxNS4yNjE3MTkgQyA3NDAuMjUgNjEzLjE2MDE1NiA3MzcuMzc4OTA2IDYxMC4xNDg0MzggNzM1LjMwODU5NCA2MDYuMjUgQyA3MzMuMjM4MjgxIDYwMi4zNTkzNzUgNzMyLjE5OTIxOSA1OTcuODcxMDk0IDczMi4xOTkyMTkgNTkyLjc4OTA2MiBDIDczMi4xOTkyMTkgNTg3LjcxODc1IDczMy4yMzgyODEgNTgzLjI1IDczNS4zMDg1OTQgNTc5LjM5MDYyNSBDIDczNy4zNzg5MDYgNTc1LjUzMTI1IDc0MC4yNSA1NzIuNTM5MDYyIDc0My44OTA2MjUgNTcwLjQ0MTQwNiBDIDc0Ny41MzkwNjIgNTY4LjMyODEyNSA3NTEuNjQ4NDM4IDU2Ny4yNjk1MzEgNzU2LjIxODc1IDU2Ny4yNjk1MzEgQyA3NjMuNTE5NTMxIDU2Ny4yNjk1MzEgNzY5LjMyMDMxMiA1NjkuNTU4NTk0IDc3My42NDg0MzggNTc0LjEyODkwNiBDIDc3Ny45ODA0NjkgNTc4LjcxMDkzOCA3ODAuMTQwNjI1IDU4NC45Mjk2ODggNzgwLjE0MDYyNSA1OTIuNzg5MDYyIEMgNzgwLjE0MDYyNSA2MDAuNzMwNDY5IDc3Ny45ODA0NjkgNjA2Ljk4ODI4MSA3NzMuNjQ4NDM4IDYxMS41NTg1OTQgTSA3ODEuNDI5Njg4IDU3Ni45MjE4NzUgQyA3NzkuMDcwMzEyIDU3Mi40MjE4NzUgNzc1Ljc4OTA2MiA1NjguOTY4NzUgNzcxLjYwOTM3NSA1NjYuNTc4MTI1IEMgNzY3LjQyOTY4OCA1NjQuMTc5Njg4IDc2Mi42MjEwOTQgNTYyLjk4MDQ2OSA3NTcuMTkxNDA2IDU2Mi45ODA0NjkgQyA3NTAuODk4NDM4IDU2Mi45ODA0NjkgNzQ1LjU1MDc4MSA1NjQuNjQwNjI1IDc0MS4xNjAxNTYgNTY3Ljk2ODc1IEMgNzM2Ljc2MTcxOSA1NzEuMjg5MDYyIDczMy43Njk1MzEgNTc1LjY3MTg3NSA3MzIuMTk5MjE5IDU4MS4xMDkzNzUgTCA3MzIuMTk5MjE5IDU2My43MzA0NjkgTCA3MjcuNDgwNDY5IDU2My43MzA0NjkgTCA3MjcuNDgwNDY5IDY0OS40MjE4NzUgTCA3MzIuMTk5MjE5IDY0OS40MjE4NzUgTCA3MzIuMTk5MjE5IDYwNC41ODk4NDQgQyA3MzMuNzY5NTMxIDYxMC4wMzEyNSA3MzYuNzYxNzE5IDYxNC4zOTg0MzggNzQxLjE2MDE1NiA2MTcuNzMwNDY5IEMgNzQ1LjU1MDc4MSA2MjEuMDUwNzgxIDc1MC44OTg0MzggNjIyLjcxMDkzOCA3NTcuMTkxNDA2IDYyMi43MTA5MzggQyA3NjIuNjIxMDk0IDYyMi43MTA5MzggNzY3LjQyOTY4OCA2MjEuNTE5NTMxIDc3MS42MDkzNzUgNjE5LjEyMTA5NCBDIDc3NS43ODkwNjIgNjE2LjczMDQ2OSA3NzkuMDcwMzEyIDYxMy4yNjE3MTkgNzgxLjQyOTY4OCA2MDguNzE4NzUgQyA3ODMuNzgxMjUgNjA0LjE3OTY4OCA3ODQuOTYwOTM4IDU5OC44NzEwOTQgNzg0Ljk2MDkzOCA1OTIuNzg5MDYyIEMgNzg0Ljk2MDkzOCA1ODYuNzE4NzUgNzgzLjc4MTI1IDU4MS40Mjk2ODggNzgxLjQyOTY4OCA1NzYuOTIxODc1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gNzkyLjczMDQ2OSA2MjEuOTY4NzUgTCA3OTcuNTU4NTk0IDYyMS45Njg3NSBMIDc5Ny41NTg1OTQgNTQyLjYwOTM3NSBMIDc5Mi43MzA0NjkgNTQyLjYwOTM3NSBaIE0gNzkyLjczMDQ2OSA2MjEuOTY4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA4NTYuOTgwNDY5IDYwNi4yNSBDIDg1NC45NDE0MDYgNjEwLjE0ODQzOCA4NTIuMTAxNTYyIDYxMy4xNjAxNTYgODQ4LjQ2MDkzOCA2MTUuMjYxNzE5IEMgODQ0LjgwODU5NCA2MTcuMzcxMDk0IDg0MC42OTkyMTkgNjE4LjQyOTY4OCA4MzYuMTIxMDk0IDYxOC40Mjk2ODggQyA4MjguNzYxNzE5IDYxOC40Mjk2ODggODIyLjkyOTY4OCA2MTYuMTQwNjI1IDgxOC42NDA2MjUgNjExLjU1ODU5NCBDIDgxNC4zNTE1NjIgNjA2Ljk4ODI4MSA4MTIuMjEwOTM4IDYwMC43MzA0NjkgODEyLjIxMDkzOCA1OTIuNzg5MDYyIEMgODEyLjIxMDkzOCA1ODQuOTI5Njg4IDgxNC4zNzEwOTQgNTc4LjcxMDkzOCA4MTguNjk5MjE5IDU3NC4xMjg5MDYgQyA4MjMuMDE5NTMxIDU2OS41NTg1OTQgODI4LjgyODEyNSA1NjcuMjY5NTMxIDgzNi4xMjEwOTQgNTY3LjI2OTUzMSBDIDg0MC42OTkyMTkgNTY3LjI2OTUzMSA4NDQuODA4NTk0IDU2OC4zMjgxMjUgODQ4LjQ2MDkzOCA1NzAuNDQxNDA2IEMgODUyLjEwMTU2MiA1NzIuNTM5MDYyIDg1NC45NDE0MDYgNTc1LjUzMTI1IDg1Ni45ODA0NjkgNTc5LjM5MDYyNSBDIDg1OS4wMTk1MzEgNTgzLjI1IDg2MC4wMzkwNjIgNTg3LjcxODc1IDg2MC4wMzkwNjIgNTkyLjc4OTA2MiBDIDg2MC4wMzkwNjIgNTk3Ljg3MTA5NCA4NTkuMDE5NTMxIDYwMi4zNTkzNzUgODU2Ljk4MDQ2OSA2MDYuMjUgTSA4NjAuMDM5MDYyIDU2My43MzA0NjkgTCA4NjAuMDM5MDYyIDU4MS4xMDkzNzUgQyA4NTguNDYwOTM4IDU3NS42NzE4NzUgODU1LjUgNTcxLjI4OTA2MiA4NTEuMTQwNjI1IDU2Ny45Njg3NSBDIDg0Ni43ODEyNSA1NjQuNjQwNjI1IDg0MS40MTAxNTYgNTYyLjk4MDQ2OSA4MzUuMDUwNzgxIDU2Mi45ODA0NjkgQyA4MjkuNjIxMDk0IDU2Mi45ODA0NjkgODI0LjgwODU5NCA1NjQuMTc5Njg4IDgyMC42Mjg5MDYgNTY2LjU3ODEyNSBDIDgxNi40NDE0MDYgNTY4Ljk2ODc1IDgxMy4xNzE4NzUgNTcyLjQyMTg3NSA4MTAuODA4NTk0IDU3Ni45MjE4NzUgQyA4MDguNDQ5MjE5IDU4MS40Mjk2ODggODA3LjI4MTI1IDU4Ni43MTg3NSA4MDcuMjgxMjUgNTkyLjc4OTA2MiBDIDgwNy4yODEyNSA1OTguODcxMDk0IDgwOC40NDkyMTkgNjA0LjE3OTY4OCA4MTAuODA4NTk0IDYwOC43MTg3NSBDIDgxMy4xNzE4NzUgNjEzLjI2MTcxOSA4MTYuNDQxNDA2IDYxNi43MzA0NjkgODIwLjYyODkwNiA2MTkuMTIxMDk0IEMgODI0LjgwODU5NCA2MjEuNTE5NTMxIDgyOS42MjEwOTQgNjIyLjcxMDkzOCA4MzUuMDUwNzgxIDYyMi43MTA5MzggQyA4NDEuNDEwMTU2IDYyMi43MTA5MzggODQ2Ljc4MTI1IDYyMS4wNTA3ODEgODUxLjE0MDYyNSA2MTcuNzMwNDY5IEMgODU1LjUgNjE0LjM5ODQzOCA4NTguNDYwOTM4IDYxMC4wMzEyNSA4NjAuMDM5MDYyIDYwNC41ODk4NDQgTCA4NjAuMDM5MDYyIDYyMS45Njg3NSBMIDg2NC44NTkzNzUgNjIxLjk2ODc1IEwgODY0Ljg1OTM3NSA1NjMuNzMwNDY5IFogTSA4NjAuMDM5MDYyIDU2My43MzA0NjkgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSA5MjAuODk4NDM4IDU2OC45ODgyODEgQyA5MTYuNjA5Mzc1IDU2NC42OTkyMTkgOTExLjAzMTI1IDU2Mi41NTA3ODEgOTA0LjE3MTg3NSA1NjIuNTUwNzgxIEMgODk4Ljg3MTA5NCA1NjIuNTUwNzgxIDg5NC4yMTA5MzggNTYzLjk0OTIxOSA4OTAuMTcxODc1IDU2Ni43MzgyODEgQyA4ODYuMTI4OTA2IDU2OS41MTk1MzEgODgzLjM5ODQzOCA1NzMuNjQwNjI1IDg4MS45Njg3NSA1NzkuMDcwMzEyIEwgODgxLjk2ODc1IDU2My43MzA0NjkgTCA4NzcuMTQwNjI1IDU2My43MzA0NjkgTCA4NzcuMTQwNjI1IDYyMS45Njg3NSBMIDg4MS45Njg3NSA2MjEuOTY4NzUgTCA4ODEuOTY4NzUgNTkwLjk2ODc1IEMgODgxLjk2ODc1IDU4Mi45Njg3NSA4ODMuODc4OTA2IDU3Ni45MTAxNTYgODg3LjY5OTIxOSA1NzIuNzg5MDYyIEMgODkxLjUzMTI1IDU2OC42Nzk2ODggODk2LjU4OTg0NCA1NjYuNjI4OTA2IDkwMi44Nzg5MDYgNTY2LjYyODkwNiBDIDkwOC45NjA5MzggNTY2LjYyODkwNiA5MTMuNzUgNTY4LjQ2ODc1IDkxNy4yNSA1NzIuMTQ4NDM4IEMgOTIwLjc1IDU3NS44MjgxMjUgOTIyLjUgNTgxLjE3OTY4OCA5MjIuNSA1ODguMTc5Njg4IEwgOTIyLjUgNjIxLjk2ODc1IEwgOTI3LjMyODEyNSA2MjEuOTY4NzUgTCA5MjcuMzI4MTI1IDU4Ny45Njg3NSBDIDkyNy4zMjgxMjUgNTc5LjYwMTU2MiA5MjUuMTkxNDA2IDU3My4yODEyNSA5MjAuODk4NDM4IDU2OC45ODgyODEgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMDAwLjk0MTQwNiA1NDkuNTc4MTI1IEMgMTAwMy4yMzA0NjkgNTQ3LjM1OTM3NSAxMDA3LjMwODU5NCA1NDYuMjUgMTAxMy4xNjc5NjkgNTQ2LjI1IEwgMTAxMy4xNjc5NjkgNTQxLjg1OTM3NSBDIDEwMDUuOTQ5MjE5IDU0MS43ODkwNjIgMTAwMC43MTA5MzggNTQzLjI2OTUzMSA5OTcuNDYwOTM4IDU0Ni4zMDg1OTQgQyA5OTQuMjEwOTM4IDU0OS4zMzk4NDQgOTkyLjU3ODEyNSA1NTMuOTY4NzUgOTkyLjU3ODEyNSA1NjAuMTkxNDA2IEwgOTkyLjU3ODEyNSA1NjMuNzMwNDY5IEwgOTgzLjU3MDMxMiA1NjMuNzMwNDY5IEwgOTgzLjU3MDMxMiA1NjguMTI4OTA2IEwgOTkyLjU3ODEyNSA1NjguMTI4OTA2IEwgOTkyLjU3ODEyNSA2MjEuOTY4NzUgTCA5OTcuNTExNzE5IDYyMS45Njg3NSBMIDk5Ny41MTE3MTkgNTY4LjEyODkwNiBMIDEwMTMuMTY3OTY5IDU2OC4xMjg5MDYgTCAxMDEzLjE2Nzk2OSA1NjMuNzMwNDY5IEwgOTk3LjUxMTcxOSA1NjMuNzMwNDY5IEwgOTk3LjUxMTcxOSA1NjAuNTE5NTMxIEMgOTk3LjUxMTcxOSA1NTUuNDQxNDA2IDk5OC42NjAxNTYgNTUxLjc4OTA2MiAxMDAwLjk0MTQwNiA1NDkuNTc4MTI1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTAzMC41MzkwNjIgNTQzLjMwMDc4MSBDIDEwMjkuNzUgNTQyLjU1MDc4MSAxMDI4Ljc1IDU0Mi4xNzk2ODggMTAyNy41MzkwNjIgNTQyLjE3OTY4OCBDIDEwMjYuMzIwMzEyIDU0Mi4xNzk2ODggMTAyNS4zMzk4NDQgNTQyLjU1MDc4MSAxMDI0LjU4OTg0NCA1NDMuMzAwNzgxIEMgMTAyMy44Mzk4NDQgNTQ0LjA1MDc4MSAxMDIzLjQ2MDkzOCA1NDUgMTAyMy40NjA5MzggNTQ2LjE0ODQzOCBDIDEwMjMuNDYwOTM4IDU0Ny4zNTkzNzUgMTAyMy44Mzk4NDQgNTQ4LjMzOTg0NCAxMDI0LjU4OTg0NCA1NDkuMDg5ODQ0IEMgMTAyNS4zMzk4NDQgNTQ5LjgzOTg0NCAxMDI2LjMyMDMxMiA1NTAuMjE4NzUgMTAyNy41MzkwNjIgNTUwLjIxODc1IEMgMTAyOC43NSA1NTAuMjE4NzUgMTAyOS43NSA1NDkuODM5ODQ0IDEwMzAuNTM5MDYyIDU0OS4wODk4NDQgQyAxMDMxLjMyODEyNSA1NDguMzM5ODQ0IDEwMzEuNzE4NzUgNTQ3LjM1OTM3NSAxMDMxLjcxODc1IDU0Ni4xNDg0MzggQyAxMDMxLjcxODc1IDU0NSAxMDMxLjMyODEyNSA1NDQuMDUwNzgxIDEwMzAuNTM5MDYyIDU0My4zMDA3ODEgTSAxMDI1LjE3OTY4OCA2MjEuOTY4NzUgTCAxMDMwLjAxMTcxOSA2MjEuOTY4NzUgTCAxMDMwLjAxMTcxOSA1NjMuNzMwNDY5IEwgMTAyNS4xNzk2ODggNTYzLjczMDQ2OSBaIE0gMTAyNS4xNzk2ODggNjIxLjk2ODc1ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTA5MS4xMjg5MDYgNTY4Ljk4ODI4MSBDIDEwODYuODM5ODQ0IDU2NC42OTkyMTkgMTA4MS4yNjk1MzEgNTYyLjU1MDc4MSAxMDc0LjM5ODQzOCA1NjIuNTUwNzgxIEMgMTA2OS4xMDkzNzUgNTYyLjU1MDc4MSAxMDY0LjQ0OTIxOSA1NjMuOTQ5MjE5IDEwNjAuNDEwMTU2IDU2Ni43MzgyODEgQyAxMDU2LjM3MTA5NCA1NjkuNTE5NTMxIDEwNTMuNjI4OTA2IDU3My42NDA2MjUgMTA1Mi4xOTkyMTkgNTc5LjA3MDMxMiBMIDEwNTIuMTk5MjE5IDU2My43MzA0NjkgTCAxMDQ3LjM3ODkwNiA1NjMuNzMwNDY5IEwgMTA0Ny4zNzg5MDYgNjIxLjk2ODc1IEwgMTA1Mi4xOTkyMTkgNjIxLjk2ODc1IEwgMTA1Mi4xOTkyMTkgNTkwLjk2ODc1IEMgMTA1Mi4xOTkyMTkgNTgyLjk2ODc1IDEwNTQuMTIxMDk0IDU3Ni45MTAxNTYgMTA1Ny45NDE0MDYgNTcyLjc4OTA2MiBDIDEwNjEuNzYxNzE5IDU2OC42Nzk2ODggMTA2Ni44MjAzMTIgNTY2LjYyODkwNiAxMDczLjEyMTA5NCA1NjYuNjI4OTA2IEMgMTA3OS4xOTE0MDYgNTY2LjYyODkwNiAxMDgzLjk4MDQ2OSA1NjguNDY4NzUgMTA4Ny40ODgyODEgNTcyLjE0ODQzOCBDIDEwOTAuOTg4MjgxIDU3NS44MjgxMjUgMTA5Mi43MzgyODEgNTgxLjE3OTY4OCAxMDkyLjczODI4MSA1ODguMTc5Njg4IEwgMTA5Mi43MzgyODEgNjIxLjk2ODc1IEwgMTA5Ny41NzAzMTIgNjIxLjk2ODc1IEwgMTA5Ny41NzAzMTIgNTg3Ljk2ODc1IEMgMTA5Ny41NzAzMTIgNTc5LjYwMTU2MiAxMDk1LjQyMTg3NSA1NzMuMjgxMjUgMTA5MS4xMjg5MDYgNTY4Ljk4ODI4MSAiLz4KICAgIDxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgICBkPSJNIDExNTcuNDgwNDY5IDYwNi4yNSBDIDExNTUuNDQxNDA2IDYxMC4xNDg0MzggMTE1Mi42MDE1NjIgNjEzLjE2MDE1NiAxMTQ4Ljk0OTIxOSA2MTUuMjYxNzE5IEMgMTE0NS4zMDg1OTQgNjE3LjM3MTA5NCAxMTQxLjE5OTIxOSA2MTguNDI5Njg4IDExMzYuNjIxMDk0IDYxOC40Mjk2ODggQyAxMTI5LjI2MTcxOSA2MTguNDI5Njg4IDExMjMuNDI5Njg4IDYxNi4xNDA2MjUgMTExOS4xNDA2MjUgNjExLjU1ODU5NCBDIDExMTQuODUxNTYyIDYwNi45ODgyODEgMTExMi43MTA5MzggNjAwLjczMDQ2OSAxMTEyLjcxMDkzOCA1OTIuNzg5MDYyIEMgMTExMi43MTA5MzggNTg0LjkyOTY4OCAxMTE0Ljg3MTA5NCA1NzguNzEwOTM4IDExMTkuMTkxNDA2IDU3NC4xMjg5MDYgQyAxMTIzLjUxOTUzMSA1NjkuNTU4NTk0IDExMjkuMzI4MTI1IDU2Ny4yNjk1MzEgMTEzNi42MjEwOTQgNTY3LjI2OTUzMSBDIDExNDEuMTk5MjE5IDU2Ny4yNjk1MzEgMTE0NS4zMDg1OTQgNTY4LjMyODEyNSAxMTQ4Ljk0OTIxOSA1NzAuNDQxNDA2IEMgMTE1Mi42MDE1NjIgNTcyLjUzOTA2MiAxMTU1LjQ0MTQwNiA1NzUuNTMxMjUgMTE1Ny40ODA0NjkgNTc5LjM5MDYyNSBDIDExNTkuNTE5NTMxIDU4My4yNSAxMTYwLjUzOTA2MiA1ODcuNzE4NzUgMTE2MC41MzkwNjIgNTkyLjc4OTA2MiBDIDExNjAuNTM5MDYyIDU5Ny44NzEwOTQgMTE1OS41MTk1MzEgNjAyLjM1OTM3NSAxMTU3LjQ4MDQ2OSA2MDYuMjUgTSAxMTYwLjUzOTA2MiA1NjMuNzMwNDY5IEwgMTE2MC41MzkwNjIgNTgxLjEwOTM3NSBDIDExNTguOTYwOTM4IDU3NS42NzE4NzUgMTE1NiA1NzEuMjg5MDYyIDExNTEuNjQwNjI1IDU2Ny45Njg3NSBDIDExNDcuMjY5NTMxIDU2NC42NDA2MjUgMTE0MS45MTAxNTYgNTYyLjk4MDQ2OSAxMTM1LjU1MDc4MSA1NjIuOTgwNDY5IEMgMTEzMC4xMjEwOTQgNTYyLjk4MDQ2OSAxMTI1LjMwODU5NCA1NjQuMTc5Njg4IDExMjEuMTI4OTA2IDU2Ni41NzgxMjUgQyAxMTE2Ljk0MTQwNiA1NjguOTY4NzUgMTExMy42NzE4NzUgNTcyLjQyMTg3NSAxMTExLjMwODU5NCA1NzYuOTIxODc1IEMgMTEwOC45NDkyMTkgNTgxLjQyOTY4OCAxMTA3Ljc2OTUzMSA1ODYuNzE4NzUgMTEwNy43Njk1MzEgNTkyLjc4OTA2MiBDIDExMDcuNzY5NTMxIDU5OC44NzEwOTQgMTEwOC45NDkyMTkgNjA0LjE3OTY4OCAxMTExLjMwODU5NCA2MDguNzE4NzUgQyAxMTEzLjY3MTg3NSA2MTMuMjYxNzE5IDExMTYuOTQxNDA2IDYxNi43MzA0NjkgMTEyMS4xMjg5MDYgNjE5LjEyMTA5NCBDIDExMjUuMzA4NTk0IDYyMS41MTk1MzEgMTEzMC4xMjEwOTQgNjIyLjcxMDkzOCAxMTM1LjU1MDc4MSA2MjIuNzEwOTM4IEMgMTE0MS45MTAxNTYgNjIyLjcxMDkzOCAxMTQ3LjI2OTUzMSA2MjEuMDUwNzgxIDExNTEuNjQwNjI1IDYxNy43MzA0NjkgQyAxMTU2IDYxNC4zOTg0MzggMTE1OC45NjA5MzggNjEwLjAzMTI1IDExNjAuNTM5MDYyIDYwNC41ODk4NDQgTCAxMTYwLjUzOTA2MiA2MjEuOTY4NzUgTCAxMTY1LjM1OTM3NSA2MjEuOTY4NzUgTCAxMTY1LjM1OTM3NSA1NjMuNzMwNDY5IFogTSAxMTYwLjUzOTA2MiA1NjMuNzMwNDY5ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gMTIyMS43MTg3NSA1NjguOTg4MjgxIEMgMTIxNy40Mjk2ODggNTY0LjY5OTIxOSAxMjExLjg1MTU2MiA1NjIuNTUwNzgxIDEyMDQuOTg4MjgxIDU2Mi41NTA3ODEgQyAxMTk5LjY5MTQwNiA1NjIuNTUwNzgxIDExOTUuMDMxMjUgNTYzLjk0OTIxOSAxMTkwLjk4ODI4MSA1NjYuNzM4MjgxIEMgMTE4Ni45NDkyMTkgNTY5LjUxOTUzMSAxMTg0LjIxODc1IDU3My42NDA2MjUgMTE4Mi43ODkwNjIgNTc5LjA3MDMxMiBMIDExODIuNzg5MDYyIDU2My43MzA0NjkgTCAxMTc3Ljk2MDkzOCA1NjMuNzMwNDY5IEwgMTE3Ny45NjA5MzggNjIxLjk2ODc1IEwgMTE4Mi43ODkwNjIgNjIxLjk2ODc1IEwgMTE4Mi43ODkwNjIgNTkwLjk2ODc1IEMgMTE4Mi43ODkwNjIgNTgyLjk2ODc1IDExODQuNjk5MjE5IDU3Ni45MTAxNTYgMTE4OC41MTk1MzEgNTcyLjc4OTA2MiBDIDExOTIuMzUxNTYyIDU2OC42Nzk2ODggMTE5Ny40MTAxNTYgNTY2LjYyODkwNiAxMjAzLjY5OTIxOSA1NjYuNjI4OTA2IEMgMTIwOS43ODEyNSA1NjYuNjI4OTA2IDEyMTQuNTcwMzEyIDU2OC40Njg3NSAxMjE4LjA3MDMxMiA1NzIuMTQ4NDM4IEMgMTIyMS41NzAzMTIgNTc1LjgyODEyNSAxMjIzLjMyMDMxMiA1ODEuMTc5Njg4IDEyMjMuMzIwMzEyIDU4OC4xNzk2ODggTCAxMjIzLjMyMDMxMiA2MjEuOTY4NzUgTCAxMjI4LjE0ODQzOCA2MjEuOTY4NzUgTCAxMjI4LjE0ODQzOCA1ODcuOTY4NzUgQyAxMjI4LjE0ODQzOCA1NzkuNjAxNTYyIDEyMjYuMDExNzE5IDU3My4yODEyNSAxMjIxLjcxODc1IDU2OC45ODgyODEgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMjgwLjQyOTY4OCA2MTMuOTIxODc1IEMgMTI3Ni40MTc5NjkgNjE2LjkyOTY4OCAxMjcxLjQ4ODI4MSA2MTguNDI5Njg4IDEyNjUuNjI4OTA2IDYxOC40Mjk2ODggQyAxMjYxLjQxMDE1NiA2MTguNDI5Njg4IDEyNTcuNTUwNzgxIDYxNy41IDEyNTQuMDUwNzgxIDYxNS42NDA2MjUgQyAxMjUwLjUzOTA2MiA2MTMuNzgxMjUgMTI0Ny43MTg3NSA2MTAuOTIxODc1IDEyNDUuNTc4MTI1IDYwNy4wNTg1OTQgQyAxMjQzLjQyOTY4OCA2MDMuMTk5MjE5IDEyNDIuMzU5Mzc1IDU5OC40NDE0MDYgMTI0Mi4zNTkzNzUgNTkyLjc4OTA2MiBDIDEyNDIuMzU5Mzc1IDU4Ny4xNDg0MzggMTI0My40Mjk2ODggNTgyLjM5MDYyNSAxMjQ1LjU3ODEyNSA1NzguNTMxMjUgQyAxMjQ3LjcxODc1IDU3NC42NzE4NzUgMTI1MC41MzkwNjIgNTcxLjgwODU5NCAxMjU0LjA1MDc4MSA1NjkuOTQ5MjE5IEMgMTI1Ny41NTA3ODEgNTY4LjA4OTg0NCAxMjYxLjQxMDE1NiA1NjcuMTYwMTU2IDEyNjUuNjI4OTA2IDU2Ny4xNjAxNTYgQyAxMjcxLjQ4ODI4MSA1NjcuMTYwMTU2IDEyNzYuNDE3OTY5IDU2OC42NzE4NzUgMTI4MC40Mjk2ODggNTcxLjY3MTg3NSBDIDEyODQuNDI5Njg4IDU3NC42NzE4NzUgMTI4Ni44NTkzNzUgNTc4Ljc1IDEyODcuNzE4NzUgNTgzLjg5MDYyNSBMIDEyOTIuNzYxNzE5IDU4My44OTA2MjUgQyAxMjkxLjY5MTQwNiA1NzcuNjAxNTYyIDEyODguNzYxNzE5IDU3Mi41MzkwNjIgMTI4My45Njg3NSA1NjguNzE4NzUgQyAxMjc5LjE3OTY4OCA1NjQuODk4NDM4IDEyNzMuMTAxNTYyIDU2Mi45ODA0NjkgMTI2NS43MzgyODEgNTYyLjk4MDQ2OSBDIDEyNjAuMjMwNDY5IDU2Mi45ODA0NjkgMTI1NS4zNTE1NjIgNTY0LjE3OTY4OCAxMjUxLjEwMTU2MiA1NjYuNTc4MTI1IEMgMTI0Ni44Mzk4NDQgNTY4Ljk2ODc1IDEyNDMuNSA1NzIuNDIxODc1IDEyNDEuMDcwMzEyIDU3Ni45MjE4NzUgQyAxMjM4LjY0MDYyNSA1ODEuNDI5Njg4IDEyMzcuNDE3OTY5IDU4Ni43MTg3NSAxMjM3LjQxNzk2OSA1OTIuNzg5MDYyIEMgMTIzNy40MTc5NjkgNTk4Ljk0MTQwNiAxMjM4LjY0MDYyNSA2MDQuMjY5NTMxIDEyNDEuMDcwMzEyIDYwOC43Njk1MzEgQyAxMjQzLjUgNjEzLjI4MTI1IDEyNDYuODM5ODQ0IDYxNi43MzA0NjkgMTI1MS4xMDE1NjIgNjE5LjEyMTA5NCBDIDEyNTUuMzUxNTYyIDYyMS41MTk1MzEgMTI2MC4yMzA0NjkgNjIyLjcxMDkzOCAxMjY1LjczODI4MSA2MjIuNzEwOTM4IEMgMTI3My4xMDE1NjIgNjIyLjcxMDkzOCAxMjc5LjE3OTY4OCA2MjAuODAwNzgxIDEyODMuOTY4NzUgNjE2Ljk4MDQ2OSBDIDEyODguNzYxNzE5IDYxMy4xNjAxNTYgMTI5MS42OTE0MDYgNjA4LjA1ODU5NCAxMjkyLjc2MTcxOSA2MDEuNjk5MjE5IEwgMTI4Ny43MTg3NSA2MDEuNjk5MjE5IEMgMTI4Ni44NTkzNzUgNjA2LjgzOTg0NCAxMjg0LjQyOTY4OCA2MTAuOTIxODc1IDEyODAuNDI5Njg4IDYxMy45MjE4NzUgIi8+CiAgICA8cGF0aCBmaWxsLXJ1bGU9Im5vbnplcm8iICAgZD0iTSAxMzEyLjc2MTcxOSA1NzcuNzgxMjUgQyAxMzE0Ljk0MTQwNiA1NzQuMTI4OTA2IDEzMTcuNzgxMjUgNTcxLjQyMTg3NSAxMzIxLjI4OTA2MiA1NjkuNjI4OTA2IEMgMTMyNC43ODkwNjIgNTY3Ljg1MTU2MiAxMzI4LjY0ODQzOCA1NjYuOTQ5MjE5IDEzMzIuODcxMDk0IDU2Ni45NDkyMTkgQyAxMzM2Ljk0MTQwNiA1NjYuOTQ5MjE5IDEzNDAuNzMwNDY5IDU2Ny44MjgxMjUgMTM0NC4yMzgyODEgNTY5LjU3ODEyNSBDIDEzNDcuNzM4MjgxIDU3MS4zMjgxMjUgMTM1MC41MzEyNSA1NzQuMDUwNzgxIDEzNTIuNjAxNTYyIDU3Ny43MzA0NjkgQyAxMzU0LjY3MTg3NSA1ODEuNDEwMTU2IDEzNTUuNTcwMzEyIDU4NS45Mjk2ODggMTM1NS4yODEyNSA1OTEuMjg5MDYyIEwgMTMwOS4zNzg5MDYgNTkxLjI4OTA2MiBDIDEzMDkuNDQ5MjE5IDU4NS45Mjk2ODggMTMxMC41NzgxMjUgNTgxLjQyOTY4OCAxMzEyLjc2MTcxOSA1NzcuNzgxMjUgTSAxMzQ3LjQ0OTIxOSA2MTQuMTkxNDA2IEMgMTM0My40NDkyMTkgNjE3LjE2MDE1NiAxMzM4LjUxOTUzMSA2MTguNjQwNjI1IDEzMzIuNjQ4NDM4IDYxOC42NDA2MjUgQyAxMzI4LjUxMTcxOSA2MTguNjQwNjI1IDEzMjQuNjk5MjE5IDYxNy43Njk1MzEgMTMyMS4yMzA0NjkgNjE2LjAxMTcxOSBDIDEzMTcuNzYxNzE5IDYxNC4yNjE3MTkgMTMxNC45NDE0MDYgNjExLjU1MDc4MSAxMzEyLjc2MTcxOSA2MDcuODU5Mzc1IEMgMTMxMC41NzgxMjUgNjA0LjE3OTY4OCAxMzA5LjQ0OTIxOSA1OTkuNjIxMDk0IDEzMDkuMzc4OTA2IDU5NC4xOTE0MDYgTCAxMzU5LjQ2MDkzOCA1OTQuMTkxNDA2IEMgMTM1OS44MjAzMTIgNTkyLjE5MTQwNiAxMzYwIDU5MC4yODkwNjIgMTM2MCA1ODguNSBDIDEzNjAgNTg0LjA3MDMxMiAxMzU4Ljk0OTIxOSA1NzkuOTEwMTU2IDEzNTYuODM5ODQ0IDU3Ni4wMTE3MTkgQyAxMzU0LjczMDQ2OSA1NzIuMTIxMDk0IDEzNTEuNjIxMDk0IDU2OC45Njg3NSAxMzQ3LjUxMTcxOSA1NjYuNTc4MTI1IEMgMTM0My4zOTA2MjUgNTY0LjE3OTY4OCAxMzM4LjUxOTUzMSA1NjIuOTgwNDY5IDEzMzIuODcxMDk0IDU2Mi45ODA0NjkgQyAxMzI3LjM1OTM3NSA1NjIuOTgwNDY5IDEzMjIuNDgwNDY5IDU2NC4xNzk2ODggMTMxOC4yMzA0NjkgNTY2LjU3ODEyNSBDIDEzMTMuOTgwNDY5IDU2OC45Njg3NSAxMzEwLjYyODkwNiA1NzIuNDIxODc1IDEzMDguMTk5MjE5IDU3Ni45MjE4NzUgQyAxMzA1Ljc2OTUzMSA1ODEuNDI5Njg4IDEzMDQuNTU4NTk0IDU4Ni43MTg3NSAxMzA0LjU1ODU5NCA1OTIuNzg5MDYyIEMgMTMwNC41NTg1OTQgNTk4Ljk0MTQwNiAxMzA1Ljc2OTUzMSA2MDQuMjY5NTMxIDEzMDguMTk5MjE5IDYwOC43Njk1MzEgQyAxMzEwLjYyODkwNiA2MTMuMjgxMjUgMTMxMy45ODA0NjkgNjE2LjczMDQ2OSAxMzE4LjIzMDQ2OSA2MTkuMTIxMDk0IEMgMTMyMi40ODA0NjkgNjIxLjUxOTUzMSAxMzI3LjM1OTM3NSA2MjIuNzEwOTM4IDEzMzIuODcxMDk0IDYyMi43MTA5MzggQyAxMzQwLjIzMDQ2OSA2MjIuNzEwOTM4IDEzNDYuMjg5MDYyIDYyMC44MjAzMTIgMTM1MS4wNTA3ODEgNjE3LjAzMTI1IEMgMTM1NS44MDA3ODEgNjEzLjIzODI4MSAxMzU4LjcxMDkzOCA2MDguMjM4MjgxIDEzNTkuNzg5MDYyIDYwMi4wMTk1MzEgTCAxMzU0Ljc1IDYwMi4wMTk1MzEgQyAxMzUzLjg5MDYyNSA2MDcuMTcxODc1IDEzNTEuNDYwOTM4IDYxMS4yMTg3NSAxMzQ3LjQ0OTIxOSA2MTQuMTkxNDA2ICIvPgogICAgPHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiAgIGQ9Ik0gOTk5LjE3MTg3NSA1MDEuMzA4NTk0IEMgOTgxLjU3ODEyNSA1MDEuMzA4NTk0IDk2Ny4zMjgxMjUgNDg3LjA1ODU5NCA5NjcuMzI4MTI1IDQ2OS40Njg3NSBDIDk2Ny4zMjgxMjUgNDUxLjg5MDYyNSA5ODEuNTc4MTI1IDQzNy42Mjg5MDYgOTk5LjE3MTg3NSA0MzcuNjI4OTA2IEMgMTAxNi43NSA0MzcuNjI4OTA2IDEwMzEuMDExNzE5IDQ1MS44OTA2MjUgMTAzMS4wMTE3MTkgNDY5LjQ2ODc1IEMgMTAzMS4wMTE3MTkgNDg3LjA1ODU5NCAxMDE2Ljc1IDUwMS4zMDg1OTQgOTk5LjE3MTg3NSA1MDEuMzA4NTk0IE0gMTAyNi4zNTE1NjIgNDQyLjAzOTA2MiBDIDEwMTkuMjY5NTMxIDQzNC45NjA5MzggMTAwOS40ODA0NjkgNDMwLjU3ODEyNSA5OTguNjc5Njg4IDQzMC41NzgxMjUgTCA5MjEuMzIwMzEyIDQzMC41NzgxMjUgQyA4OTkuNzEwOTM4IDQzMC41NzgxMjUgODgyLjE5MTQwNiA0NDguMTAxNTYyIDg4Mi4xOTE0MDYgNDY5LjcxMDkzOCBDIDg4Mi4xOTE0MDYgNDgwLjUxOTUzMSA4ODYuNTcwMzEyIDQ5MC4zMDA3ODEgODkzLjY0ODQzOCA0OTcuMzc4OTA2IEMgOTAwLjczMDQ2OSA1MDQuNDYwOTM4IDkxMC41MTk1MzEgNTA4LjgzOTg0NCA5MjEuMzIwMzEyIDUwOC44Mzk4NDQgTCA5OTguNjc5Njg4IDUwOC44Mzk4NDQgQyAxMDIwLjI4OTA2MiA1MDguODM5ODQ0IDEwMzcuODA4NTk0IDQ5MS4zMjAzMTIgMTAzNy44MDg1OTQgNDY5LjcxMDkzOCBDIDEwMzcuODA4NTk0IDQ1OC44OTg0MzggMTAzMy40Mjk2ODggNDQ5LjEyMTA5NCAxMDI2LjM1MTU2MiA0NDIuMDM5MDYyICIvPgogIDwvZz4KPC9zdmc+" alt="Outplan Finance" class="logo-img logo-img-footer"/></a>
+      <p>Subscription-based financial planning and strategy for business owners. Zero jargon. Clear impact.</p>
+    </div>
+        <div class="fc">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#advice">Areas of Advice</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot">
+    <p>&#169; 2026 Outplan Finance Ltd. All rights reserved.</p>
+    <p class="reg">Outplan Finance Ltd is authorised and regulated by the Financial Conduct Authority. The value of investments may go down as well as up. Tax treatment depends on individual circumstances and may be subject to change.</p>
+  </div>
+</footer>
+<script>
+var nav=document.getElementById("nav");
+window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",window.scrollY>60);});
+</script>
+<script>
+function submitForm() {
+  const name = document.getElementById('sf-name').value.trim();
+  const email = document.getElementById('sf-email').value.trim();
+  const phone = document.getElementById('sf-phone').value.trim();
+  const business = document.getElementById('sf-business').value.trim();
+  if (!name || !email || !phone || !business) {
+    const fields = document.querySelectorAll('.sf-field input');
+    fields.forEach(f => {
+      if (!f.value.trim()) f.style.borderColor = 'rgba(220,38,38,.5)';
+    });
+    return;
+  }
+  document.getElementById('subscribe-form').style.display = 'none';
+  document.getElementById('sf-success').style.display = 'block';
+}
+
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── Sticky bar ────────────────────────────────────────────────────────────
+const stickyBar = document.getElementById('sticky-bar');
+const heroSection = document.querySelector('.hero');
+if (stickyBar && heroSection) {
+  const stickyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  stickyObserver.observe(heroSection);
+}
+
+// ── Fade-up on scroll ─────────────────────────────────────────────────────
+const fadeEls = document.querySelectorAll(
+  '.tl-item, .acard, .cdn-card, .tcard, .pillar, .human-card, .faq-item, ' +
+  '.founder-card, .plan-card, .cost-reality, .ci-row, .crow, ' +
+  '.cdn-hdr, .testimonials-hdr, .faq-hdr, .timeline-hdr, .charging-hdr, ' +
+  '.about-l, .about-r, .human-l, .human-r, .founder-l, .founder-r, ' +
+  '.pricing-hdr, .compare-hdr, .advice-hdr, .hero-inner'
+);
+
+fadeEls.forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(28px)';
+  el.style.transition = `opacity .6s ease ${(i % 6) * 0.08}s, transform .6s ease ${(i % 6) * 0.08}s`;
+});
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// ── Timeline line draw ────────────────────────────────────────────────────
+const tl = document.querySelector('.tl');
+if (tl) {
+  tl.style.setProperty('--line-progress', '0%');
+  const style = document.createElement('style');
+  style.textContent = `.tl::before { height: var(--line-progress) !important; bottom: auto !important; transition: height .05s linear; }`;
+  document.head.appendChild(style);
+
+  const tlObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress = Math.min(progress + 1, 100);
+          tl.style.setProperty('--line-progress', progress + '%');
+          if (progress >= 100) clearInterval(interval);
+        }, 18);
+        tlObserver.unobserve(tl);
+      }
+    });
+  }, { threshold: 0.1 });
+  tlObserver.observe(tl);
+}
+
+// ── Number counters ───────────────────────────────────────────────────────
+function animateCounter(el, target, prefix, suffix, duration) {
+  const start = performance.now();
+  const isFloat = target % 1 !== 0;
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
+    el.textContent = prefix + current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+const counters = [
+  { selector: '.tm-num', target: 4.9, prefix: '', suffix: '' },
+  { selector: '.founder-stat-num', target: 15, prefix: '', suffix: '%' },
+];
+
+counters.forEach(({ selector, target, prefix, suffix }) => {
+  const els = document.querySelectorAll(selector);
+  els.forEach(el => {
+    el.dataset.target = target;
+    el.dataset.prefix = prefix;
+    el.dataset.suffix = suffix;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(el, target, prefix, suffix, 1400);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    obs.observe(el);
+  });
+});
+
+// ── Active nav highlight on scroll ───────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        if (link.getAttribute('href') === '#' + entry.target.id) {
+          link.classList.add('nav-active');
+        }
+      });
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+
+sections.forEach(s => navObserver.observe(s));
+
+// ── Hero stagger on load ──────────────────────────────────────────────────
+const heroEls = document.querySelectorAll('.hero-toggle, .hero-chip, .hero h1, .hero-sub, .hero-tags, .hero-ctas');
+heroEls.forEach((el, i) => {
+  el.style.animationDelay = `${i * 0.1}s`;
+});
+</script>
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-bar-inner">
+    <div class="sticky-bar-left">
+      <div class="sticky-bar-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="350 440 380 200" width="28" height="14"><path fill="var(--green)" fill-rule="nonzero" d="M 629.28125 612.027344 C 589.1875 612.027344 556.707031 579.546875 556.707031 539.453125 C 556.707031 499.382812 589.1875 466.878906 629.28125 466.878906 C 669.355469 466.878906 701.859375 499.382812 701.859375 539.453125 C 701.859375 579.546875 669.355469 612.027344 629.28125 612.027344 M 691.234375 476.929688 C 675.097656 460.792969 652.78125 450.808594 628.167969 450.808594 L 451.835938 450.808594 C 402.578125 450.808594 362.640625 490.742188 362.640625 540 C 362.640625 564.640625 372.625 586.933594 388.761719 603.070312 C 404.902344 619.207031 427.214844 629.191406 451.835938 629.191406 L 628.167969 629.191406 C 677.421875 629.191406 717.359375 589.257812 717.359375 540 C 717.359375 515.359375 707.375 493.066406 691.234375 476.929688"/></svg>
+      </div>
+      <div class="sticky-bar-text">
+        <span class="sticky-bar-title">outplan finance</span>
+        <span class="sticky-bar-sub">Chartered Financial Planning · £250/month</span>
+      </div>
+    </div>
+    <div class="sticky-bar-right">
+      <div class="sticky-bar-pills">
+        <span>No lock-in</span>
+        <span>Cancel anytime</span>
+        <span>FCA Regulated</span>
+      </div>
+      <a href="#contact" class="sticky-bar-btn">Subscribe Now <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
